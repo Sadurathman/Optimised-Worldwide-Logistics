@@ -22,17 +22,13 @@ import { Grid } from "@mui/material";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 function CreateContract() {
-  const [agreement, setAgremment] = useState(true);
-
-  const handleSetAgremment = () => setAgremment(!agreement);
-
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <Card>
         <SoftBox p={3} mb={1} textAlign="center">
           <SoftTypography variant="h5" fontWeight="medium">
-            Initiate Order
+            Pro Forma Invoice/Export Order
           </SoftTypography>
         </SoftBox>
         <SoftBox pt={2} pb={3} px={3}>

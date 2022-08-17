@@ -25,22 +25,22 @@ function Contracts() {
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} xl={3}>
               <Link to="/form/create-contract">
-                <SoftButton variant="outlined" color="info">
+                <SoftButton variant="gradient" color="info">
                   <Icon>add</Icon>&nbsp; Create Contract
                 </SoftButton>
               </Link>
             </Grid>
             <Grid item xs={12} sm={6} xl={3}>
-              <Link to="/form/create-contract">
+              <Link to="/form/bill-of-landing">
                 <SoftButton variant="outlined" color="info">
                   <Icon>table</Icon>&nbsp; View Contracts
                 </SoftButton>
               </Link>
             </Grid>
             <Grid item xs={12} sm={6} xl={3}>
-              <Link to="/form/create-contract">
+              <Link to="/form/commercial-invoice">
                 <SoftButton variant="outlined" color="info">
-                  <Icon>table</Icon>&nbsp; View Contract
+                  <Icon>table</Icon>&nbsp; Commercial Invoice
                 </SoftButton>
               </Link>
             </Grid>

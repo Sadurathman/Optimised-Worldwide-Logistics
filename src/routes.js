@@ -18,6 +18,8 @@ import Cube from "examples/Icons/Cube";
 import CreateContract from "layouts/forms/CreateContract";
 import Projects from "layouts/dashboard/components/Projects";
 import Contracts from "layouts/Contracts";
+import BillOfLanding from "layouts/forms/BillOfLanding";
+import CommercialInvoice from "layouts/forms/CommercialInvoice";
 
 const routes = [
   {
@@ -100,6 +102,24 @@ const routes = [
     route: "/form/create-contract",
     icon: <SpaceShip size="12px" />,
     component: <CreateContract />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Bill Of Landing",
+    key: "bill-of-landing",
+    route: "/form/bill-of-landing",
+    icon: <SpaceShip size="12px" />,
+    component: <BillOfLanding />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Commercial Invoice",
+    key: "commercial-invoice",
+    route: "/form/commercial-invoice",
+    icon: <SpaceShip size="12px" />,
+    component: <CommercialInvoice />,
     noCollapse: true,
   },
   {
