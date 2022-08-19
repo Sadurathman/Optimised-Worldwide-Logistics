@@ -18,10 +18,130 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 
 // Images
 import curved6 from "assets/images/curved-images/curved14.jpg";
-import { Grid } from "@mui/material";
+import { Grid, Icon } from "@mui/material";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 function BillOfLanding() {
+  const [products, setProduct] = useState([1]);
+  const [carrier, setCarrier] = useState([1]);
+
+  const addProductHandler = () => {
+    products.push(products[products.length]);
+    setProduct([...products]);
+    console.log(products);
+  };
+  const removeProductHandler = () => {
+    products.pop();
+    setProduct([...products]);
+  };
+
+  const addCarrierHandler = () => {
+    carrier.push(carrier[carrier.length]);
+    setCarrier([...carrier]);
+  };
+  const removeCarrierHandler = () => {
+    carrier.pop();
+    setCarrier([...carrier]);
+  };
+
+  const productData = (ele) => {
+    // console.log(ele);
+    return (
+      <Grid container spacing={2}>
+        <Grid item xs={12} lg={4}>
+          <SoftBox pt={2}>
+            <SoftInput placeholder="Customer Order Number" />
+          </SoftBox>
+        </Grid>
+        <Grid item xs={12} lg={1}>
+          <SoftBox pt={2}>
+            <SoftInput placeholder="#PKGS" />
+          </SoftBox>
+        </Grid>
+        <Grid item xs={12} lg={2}>
+          <SoftBox pt={2}>
+            <SoftInput placeholder="Weight" />
+          </SoftBox>
+        </Grid>
+        <Grid item xs={12} lg={2}>
+          <SoftBox pt={2}>
+            <SoftInput placeholder="(Y/N)" />
+          </SoftBox>
+        </Grid>
+        <Grid item xs={12} lg={3}>
+          <SoftBox pt={2}>
+            <SoftInput placeholder="Additional Shipper Info" />
+          </SoftBox>
+        </Grid>
+      </Grid>
+    );
+  };
+
+  const carrierInfo = (ele) => {
+    // console.log(ele);
+    return (
+      <Grid container spacing={2}>
+        <Grid item xs={4} lg={2}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} lg={5}>
+              <SoftBox pt={2}>
+                <SoftInput placeholder="QTY" />
+              </SoftBox>
+            </Grid>
+            <Grid item xs={12} lg={5}>
+              <SoftBox pt={2}>
+                <SoftInput placeholder="Type" />
+              </SoftBox>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={4} lg={2}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} lg={5}>
+              <SoftBox pt={2}>
+                <SoftInput placeholder="QTY" />
+              </SoftBox>
+            </Grid>
+            <Grid item xs={12} lg={5}>
+              <SoftBox pt={2}>
+                <SoftInput placeholder="Type" />
+              </SoftBox>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={2} lg={1}>
+          <SoftBox pt={2}>
+            <SoftInput placeholder="Weight" />
+          </SoftBox>
+        </Grid>
+        <Grid item xs={2} lg={1}>
+          <SoftBox pt={2}>
+            <SoftInput placeholder="H.M" />
+          </SoftBox>
+        </Grid>
+        <Grid item xs={8} lg={4}>
+          <SoftBox pt={2}>
+            <SoftInput placeholder="Commodity Description" />
+          </SoftBox>
+        </Grid>
+        <Grid item xs={4} lg={2}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} lg={5}>
+              <SoftBox pt={2}>
+                <SoftInput placeholder="NMFC#" />
+              </SoftBox>
+            </Grid>
+            <Grid item xs={12} lg={5}>
+              <SoftBox pt={2}>
+                <SoftInput placeholder="Class" />
+              </SoftBox>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    );
+  };
+
   const [fromFOB, setFromFOB] = useState(false);
   const handleSetFromFOB = () => setFromFOB(!fromFOB);
 
@@ -173,6 +293,215 @@ function BillOfLanding() {
               </SoftBox>
             </Grid>
           </Grid>
+          <Grid container spacing={2}>
+            <Grid item xs={24} lg={10}>
+              <SoftTypography variant="h4" fontWeight="medium" mb={1} ml={1}>
+                Customer Order Information
+              </SoftTypography>
+              <Grid mt={2} container spacing={2}>
+                <Grid item xs={8} lg={4}>
+                  <SoftTypography variant="h6" fontWeight="medium" mb={1} ml={1}>
+                    Customer Order Number
+                  </SoftTypography>
+                </Grid>
+                <Grid item xs={2} lg={1}>
+                  <SoftTypography variant="h6" fontWeight="medium" mb={1} ml={1}>
+                    #PKGS
+                  </SoftTypography>
+                </Grid>
+                <Grid item xs={4} lg={2}>
+                  <SoftTypography variant="h6" fontWeight="medium" mb={1} ml={1}>
+                    Weigth
+                  </SoftTypography>
+                </Grid>
+                <Grid item xs={4} lg={2}>
+                  <SoftTypography variant="h6" fontWeight="medium" mb={1} ml={1}>
+                    Pallet/Slip (Y/N)
+                  </SoftTypography>
+                </Grid>
+                <Grid item xs={6} lg={3}>
+                  <SoftTypography variant="h6" fontWeight="medium" mb={1} ml={1}>
+                    Additional Shipper Info
+                  </SoftTypography>
+                </Grid>
+              </Grid>
+              {products.map((ele) => {
+                return (
+                  <Grid item key={ele}>
+                    {productData(ele)}
+                  </Grid>
+                );
+              })}
+              <Grid container spacing={2} mt={1}>
+                <Grid item>
+                  <SoftButton variant="gradient" color="success" onClick={addProductHandler}>
+                    <Icon>add</Icon>&nbsp;&nbsp;Add
+                  </SoftButton>
+                </Grid>
+                <Grid item>
+                  <SoftButton variant="gradient" color="error" onClick={removeProductHandler}>
+                    <Icon>remove</Icon>&nbsp;&nbsp;Remove
+                  </SoftButton>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid container mt={6} spacing={2}>
+            <Grid item>
+              <SoftTypography variant="h4" fontWeight="medium" mb={1} ml={1}>
+                Carrier Information
+              </SoftTypography>
+              <Grid mt={2} container spacing={2}>
+                <Grid item xs={4} lg={2}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={24} lg={10}>
+                      <SoftTypography
+                        variant="h6"
+                        fontWeight="medium"
+                        mb={1}
+                        ml={1}
+                        textAlign="center"
+                      >
+                        Handling Unit
+                      </SoftTypography>
+                    </Grid>
+                    <Grid item xs={12} lg={5}>
+                      <SoftTypography
+                        variant="h6"
+                        fontWeight="medium"
+                        mb={1}
+                        ml={1}
+                        textAlign="center"
+                      >
+                        QTY
+                      </SoftTypography>
+                    </Grid>
+                    <Grid item xs={12} lg={5}>
+                      <SoftTypography
+                        variant="h6"
+                        fontWeight="medium"
+                        mb={1}
+                        ml={1}
+                        textAlign="center"
+                      >
+                        Type
+                      </SoftTypography>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item xs={4} lg={2}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={24} lg={10}>
+                      <SoftTypography
+                        variant="h6"
+                        fontWeight="medium"
+                        mb={1}
+                        ml={1}
+                        textAlign="center"
+                      >
+                        Package
+                      </SoftTypography>
+                    </Grid>
+                    <Grid item xs={12} lg={5}>
+                      <SoftTypography
+                        variant="h6"
+                        fontWeight="medium"
+                        mb={1}
+                        ml={1}
+                        textAlign="center"
+                      >
+                        QTY
+                      </SoftTypography>
+                    </Grid>
+                    <Grid item xs={12} lg={5}>
+                      <SoftTypography
+                        variant="h6"
+                        fontWeight="medium"
+                        mb={1}
+                        ml={1}
+                        textAlign="center"
+                      >
+                        Type
+                      </SoftTypography>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item xs={2} lg={1}>
+                  <SoftTypography variant="h6" textAlign="center" fontWeight="medium" mb={1} ml={1}>
+                    Weigth
+                  </SoftTypography>
+                </Grid>
+                <Grid item xs={2} lg={1}>
+                  <SoftTypography variant="h6" textAlign="center" fontWeight="medium" mb={1} ml={1}>
+                    H.M.(x)
+                  </SoftTypography>
+                </Grid>
+                <Grid item xs={6} lg={4}>
+                  <SoftTypography variant="h6" textAlign="center" fontWeight="medium" mb={1} ml={1}>
+                    Commodity Description
+                  </SoftTypography>
+                </Grid>
+                <Grid item xs={6} lg={2}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={24} lg={10}>
+                      <SoftTypography
+                        variant="h6"
+                        fontWeight="medium"
+                        mb={1}
+                        ml={1}
+                        textAlign="center"
+                      >
+                        LTL ONLY
+                      </SoftTypography>
+                    </Grid>
+                    <Grid item xs={12} lg={5}>
+                      <SoftTypography
+                        variant="h6"
+                        fontWeight="medium"
+                        mb={1}
+                        ml={1}
+                        textAlign="center"
+                      >
+                        NMFC#
+                      </SoftTypography>
+                    </Grid>
+                    <Grid item xs={12} lg={5}>
+                      <SoftTypography
+                        variant="h6"
+                        fontWeight="medium"
+                        mb={1}
+                        ml={1}
+                        textAlign="center"
+                      >
+                        Class
+                      </SoftTypography>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+              {carrier.map((ele) => {
+                return (
+                  <Grid item key={ele}>
+                    {carrierInfo(ele)}
+                  </Grid>
+                );
+              })}
+              <Grid container spacing={2} mt={1}>
+                <Grid item>
+                  <SoftButton variant="gradient" color="success" onClick={addCarrierHandler}>
+                    <Icon>add</Icon>&nbsp;&nbsp;Add
+                  </SoftButton>
+                </Grid>
+                <Grid item>
+                  <SoftButton variant="gradient" color="error" onClick={removeCarrierHandler}>
+                    <Icon>remove</Icon>&nbsp;&nbsp;Remove
+                  </SoftButton>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+
           <SoftBox mt={4} mb={1}>
             <SoftButton variant="gradient" color="dark">
               Submit
