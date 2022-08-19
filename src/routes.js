@@ -20,6 +20,10 @@ import Projects from "layouts/dashboard/components/Projects";
 import Contracts from "layouts/Contracts";
 import BillOfLanding from "layouts/forms/BillOfLanding";
 import CommercialInvoice from "layouts/forms/CommercialInvoice";
+import AuthorityDashboard from "layouts/dashboard/AuthorityDashboard";
+import InspectionDashboard from "layouts/dashboard/InspectionDashboard";
+import ImportersDashboard from "layouts/dashboard/ImportersDashboard";
+import Analytics from "layouts/dashboard/Analytics";
 
 const routes = [
   {
@@ -33,9 +37,18 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Exporters",
-    key: "exporters",
-    route: "/exporters",
+    name: "Analytics/Insights",
+    key: "analytics",
+    route: "/analytics",
+    icon: <Shop size="12px" />,
+    component: <Analytics />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Orders",
+    key: "orders",
+    route: "/orders",
     icon: <Office size="12px" />,
     component: <Tables />,
     noCollapse: true,
@@ -129,6 +142,33 @@ const routes = [
     route: "/contracts",
     icon: <Cube size="12px" />,
     component: <Contracts />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Authority",
+    key: "auth",
+    route: "/auth-dash",
+    icon: <Settings size="12px" />,
+    component: <AuthorityDashboard />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Inspection",
+    key: "inspect",
+    route: "/inspect",
+    icon: <CustomerSupport size="12px" />,
+    component: <InspectionDashboard />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Importer",
+    key: "importer",
+    route: "/Importer",
+    icon: <Document size="12px" />,
+    component: <ImportersDashboard />,
     noCollapse: true,
   },
 ];

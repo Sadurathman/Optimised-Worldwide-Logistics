@@ -1,4 +1,3 @@
-
 // @mui material components
 import Card from "@mui/material/Card";
 
@@ -15,7 +14,7 @@ function Invoices() {
     <Card id="delete-account" sx={{ height: "100%" }}>
       <SoftBox pt={2} px={2} display="flex" justifyContent="space-between" alignItems="center">
         <SoftTypography variant="h6" fontWeight="medium">
-          Invoices
+          Financial Statements
         </SoftTypography>
         <SoftButton variant="outlined" color="info" size="small">
           view all

@@ -36,8 +36,8 @@ const action = (
 
 const projectsTableData = {
   columns: [
-    { name: "project", align: "left" },
-    { name: "budget", align: "left" },
+    { name: "order_id", align: "left" },
+    { name: "value_of_goods", align: "left" },
     { name: "status", align: "left" },
     { name: "completion", align: "center" },
     { name: "action", align: "center" },
@@ -45,8 +45,8 @@ const projectsTableData = {
 
   rows: [
     {
-      project: [logoSpotify, "Spotift"],
-      budget: (
+      order_id: 13214124,
+      value_of_goods: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
           $2,500
         </SoftTypography>
@@ -60,8 +60,8 @@ const projectsTableData = {
       action,
     },
     {
-      project: [logoInvesion, "Invesion"],
-      budget: (
+      order_id: 1241234,
+      value_of_goods: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
           $5,000
         </SoftTypography>
@@ -75,8 +75,8 @@ const projectsTableData = {
       action,
     },
     {
-      project: [logoJira, "Jira"],
-      budget: (
+      order_id: 124132413,
+      value_of_goods: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
           $3,400
         </SoftTypography>
@@ -90,8 +90,8 @@ const projectsTableData = {
       action,
     },
     {
-      project: [logoSlack, "Slack"],
-      budget: (
+      order_id: 1241244,
+      value_of_goods: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
           $1,400
         </SoftTypography>
@@ -105,8 +105,8 @@ const projectsTableData = {
       action,
     },
     {
-      project: [logoWebDev, "Webdev"],
-      budget: (
+      order_id: 12341234,
+      value_of_goods: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
           $14,000
         </SoftTypography>
@@ -120,8 +120,8 @@ const projectsTableData = {
       action,
     },
     {
-      project: [logoXD, "Adobe XD"],
-      budget: (
+      order_id: 1241234,
+      value_of_goods: (
         <SoftTypography variant="button" color="text" fontWeight="medium">
           $2,300
         </SoftTypography>

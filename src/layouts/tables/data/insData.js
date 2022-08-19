@@ -42,10 +42,10 @@ function Function({ job, org }) {
   );
 }
 
-const authorsTableData = {
+const insData = {
   columns: [
     { name: "order_Id", align: "left" },
-    { name: "destination", align: "left" },
+    { name: "number_of_items", align: "left" },
     { name: "status", align: "center" },
     { name: "ordered_date", align: "center" },
     { name: "detail", align: "center" },
@@ -54,7 +54,7 @@ const authorsTableData = {
   rows: [
     {
       order_Id: 1231243124,
-      destination: <Function job="Netherlands" />,
+      number_of_items: <Function job="10923" />,
       status: (
         <SoftBadge variant="gradient" badgeContent="open" color="success" size="xs" container />
       ),
@@ -71,7 +71,7 @@ const authorsTableData = {
     },
     {
       order_Id: 214312432421,
-      destination: <Function job="UAE" />,
+      number_of_items: <Function job="32478" />,
       status: (
         <SoftBadge variant="gradient" badgeContent="closed" color="secondary" size="xs" container />
       ),
@@ -88,7 +88,7 @@ const authorsTableData = {
     },
     {
       order_Id: 213124124213,
-      destination: <Function job="Singapore" />,
+      number_of_items: <Function job="124123" />,
       status: (
         <SoftBadge variant="gradient" badgeContent="open" color="success" size="xs" container />
       ),
@@ -105,7 +105,7 @@ const authorsTableData = {
     },
     {
       order_Id: 231413241234,
-      destination: <Function job="China" />,
+      number_of_items: <Function job="234432" />,
       status: (
         <SoftBadge variant="gradient" badgeContent="open" color="success" size="xs" container />
       ),
@@ -122,7 +122,7 @@ const authorsTableData = {
     },
     {
       order_Id: 1242134324,
-      destination: <Function job="Australia" />,
+      number_of_items: <Function job="2144" />,
       status: (
         <SoftBadge variant="gradient" badgeContent="closed" color="secondary" size="xs" container />
       ),
@@ -139,7 +139,7 @@ const authorsTableData = {
     },
     {
       order_Id: 12432143124,
-      destination: <Function job="United States" />,
+      number_of_items: <Function job="324235" />,
       status: (
         <SoftBadge variant="gradient" badgeContent="closed" color="secondary" size="xs" container />
       ),
@@ -157,4 +157,4 @@ const authorsTableData = {
   ],
 };
 
-export default authorsTableData;
+export default insData;

@@ -16,6 +16,11 @@ import CustomerSupport from "examples/Icons/CustomerSupport";
 import CreditCard from "examples/Icons/CreditCard";
 import Cube from "examples/Icons/Cube";
 import Projects from "layouts/dashboard/components/Projects";
+import AuthorityDashboard from "layouts/dashboard/AuthorityDashboard";
+import InspectionDashboard from "layouts/dashboard/InspectionDashboard";
+import ImportersDashboard from "layouts/dashboard/ImportersDashboard";
+import AutoGraphIcon from "@mui/icons-material/AutoGraph";
+import { Icon } from "@mui/material";
 
 const routes = [
   {
@@ -29,9 +34,18 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Exporters",
-    key: "exporters",
-    route: "/exporters",
+    name: "Analytics/Insights",
+    key: "analytics",
+    route: "/analytics",
+    icon: <AutoGraphIcon />,
+    component: <Dashboard />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Orders",
+    key: "orders",
+    route: "/orders",
     icon: <Office size="12px" />,
     component: <Tables />,
     noCollapse: true,
@@ -45,52 +59,43 @@ const routes = [
     component: <Billing />,
     noCollapse: true,
   },
+  { type: "title", title: "Users Dashboards", key: "account-pages" },
   {
     type: "collapse",
-    name: "Contracts",
-    key: "contracts",
+    name: "Exporter",
+    key: "exporter",
     route: "/contracts",
     icon: <Cube size="12px" />,
     component: <Projects />,
     noCollapse: true,
   },
-  // {
-  //   type: "collapse",
-  //   name: "RTL",
-  //   key: "rtl",
-  //   route: "/rtl",
-  //   icon: <Settings size="12px" />,
-  //   component: <RTL />,
-  //   noCollapse: true,
-  // },
-  // { type: "title", title: "Account Pages", key: "account-pages" },
-  // {
-  //   type: "collapse",
-  //   name: "Profile",
-  //   key: "profile",
-  //   route: "/profile",
-  //   icon: <CustomerSupport size="12px" />,
-  //   component: <Profile />,
-  //   noCollapse: true,
-  // },
-  // {
-  //   type: "collapse",
-  //   name: "Sign In",
-  //   key: "sign-in",
-  //   route: "/authentication/sign-in",
-  //   icon: <Document size="12px" />,
-  //   component: <SignIn />,
-  //   noCollapse: true,
-  // },
-  // {
-  //   type: "collapse",
-  //   name: "Sign Up",
-  //   key: "sign-up",
-  //   route: "/authentication/sign-up",
-  //   icon: <SpaceShip size="12px" />,
-  //   component: <SignUp />,
-  //   noCollapse: true,
-  // },
+  {
+    type: "collapse",
+    name: "Authority",
+    key: "auth",
+    route: "/auth-dash",
+    icon: <Settings size="12px" />,
+    component: <AuthorityDashboard />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Inspection",
+    key: "inspect",
+    route: "/inspect",
+    icon: <CustomerSupport size="12px" />,
+    component: <InspectionDashboard />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Importer",
+    key: "importer",
+    route: "/Importer",
+    icon: <Document size="12px" />,
+    component: <ImportersDashboard />,
+    noCollapse: true,
+  },
 ];
 
 export default routes;

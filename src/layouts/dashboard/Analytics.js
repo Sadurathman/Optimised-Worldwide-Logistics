@@ -21,15 +21,10 @@ import OrderOverview from "layouts/dashboard/components/OrderOverview";
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import gradientLineChartData from "layouts/dashboard/data/gradientLineChartData";
 import map from "assets/images/map.jpg";
-import Invoices from "layouts/billing/components/Invoices";
-import { Card } from "@mui/material";
-import projectsTableData from "layouts/tables/data/projectsTableData";
-import Table from "examples/Tables/Table";
 
-function Dashboard() {
+function Analytics() {
   const { size } = typography;
   const { chart, items } = reportsBarChartData;
-  const { columns: prCols, rows: prRows } = projectsTableData;
 
   return (
     <DashboardLayout>
@@ -74,7 +69,7 @@ function Dashboard() {
             </Grid>
           </Grid>
         </SoftBox>
-        {/* <SoftBox mb={3}>
+        <SoftBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={7}>
               <BuildByDevelopers />
@@ -83,37 +78,13 @@ function Dashboard() {
               <WorkWithTheRockets />
             </Grid>
           </Grid>
-        </SoftBox> */}
+        </SoftBox>
         <SoftBox mb={3}>
-          {/* <Grid container spacing={3}> */}
-          <SoftBox>
-            <Card>
-              <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-                <SoftTypography variant="h6">Orders Status</SoftTypography>
-              </SoftBox>
-              <SoftBox
-                sx={{
-                  "& .MuiTableRow-root:not(:last-child)": {
-                    "& td": {
-                      borderBottom: ({ borders: { borderWidth, borderColor } }) =>
-                        `${borderWidth[1]} solid ${borderColor}`,
-                    },
-                  },
-                }}
-              >
-                <Table columns={prCols} rows={prRows} />
-              </SoftBox>
-            </Card>
-          </SoftBox>
-          {/* </Grid> */}
-          <br />
           <Grid container spacing={3}>
-            <Grid item xs={12} lg={5}>
-              <Invoices />
-            </Grid>
-            <Grid item xs={12} lg={7}>
+            {/* <Grid item xs={12} lg={5}></Grid> */}
+            <Grid item xs={12} lg={12}>
               <GradientLineChart
-                title="Sales Overview"
+                title="Shipping Projections"
                 description={
                   <SoftBox display="flex" alignItems="center">
                     <SoftBox fontSize={size.lg} color="success" mb={0.3} mr={0.5} lineHeight={0}>
@@ -122,7 +93,7 @@ function Dashboard() {
                     <SoftTypography variant="button" color="text" fontWeight="medium">
                       4% more{" "}
                       <SoftTypography variant="button" color="text" fontWeight="regular">
-                        in 2021
+                        in 2022
                       </SoftTypography>
                     </SoftTypography>
                   </SoftBox>
@@ -133,10 +104,18 @@ function Dashboard() {
             </Grid>
           </Grid>
         </SoftBox>
+        {/* <Grid container spacing={3}>
+          <Grid item xs={12} md={6} lg={8}>
+            <Projects />
+          </Grid>
+          <Grid item xs={12} md={6} lg={4}>
+            <OrderOverview />
+          </Grid>
+        </Grid> */}
       </SoftBox>
       <Footer />
     </DashboardLayout>
   );
 }
 
-export default Dashboard;
+export default Analytics;

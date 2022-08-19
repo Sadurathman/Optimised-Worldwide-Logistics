@@ -1,4 +1,3 @@
-
 // @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
@@ -8,7 +7,7 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 
 // Images
-import ivancik from "assets/images/ivancik.jpg";
+import ivancik from "assets/images/map.jpg";
 
 function WorkWithTheRockets() {
   return (
@@ -32,13 +31,14 @@ function WorkWithTheRockets() {
         >
           <SoftBox mb={3} pt={1}>
             <SoftTypography variant="h5" color="white" fontWeight="bold">
-              Work with the rockets
+              Piracy Incidents
             </SoftTypography>
           </SoftBox>
           <SoftBox mb={2}>
             <SoftTypography variant="body2" color="white">
-              Wealth creation is an evolutionarily recent positive-sum game. It is all about who
-              take the opportunity first.
+              Cargo ships have thorough procedures to protect themselves from pirates, particularly
+              in areas known for high rates of attacks. There were only six reports of pirates
+              attempting to attack Cargo ships over the last 10 years
             </SoftTypography>
           </SoftBox>
           <SoftTypography

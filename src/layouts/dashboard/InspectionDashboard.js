@@ -12,39 +12,22 @@ import Footer from "examples/Footer";
 import Table from "examples/Tables/Table";
 
 // Data
-import authorsTableData from "layouts/tables/data/authorsTableData";
 import projectsTableData from "layouts/tables/data/projectsTableData";
+import insData from "layouts/tables/data/insData";
 
 let context = {
-  title: "Order History",
+  title: "Order List",
 };
 
-function Tables() {
-  const { columns, rows } = authorsTableData;
+function InspectionDashboard() {
+  const { columns, rows } = insData;
   const { columns: prCols, rows: prRows } = projectsTableData;
 
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <SoftBox py={3}>
-        <Card>
-          <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-            <SoftTypography variant="h6">Order List</SoftTypography>
-          </SoftBox>
-          <SoftBox
-            sx={{
-              "& .MuiTableRow-root:not(:last-child)": {
-                "& td": {
-                  borderBottom: ({ borders: { borderWidth, borderColor } }) =>
-                    `${borderWidth[1]} solid ${borderColor}`,
-                },
-              },
-            }}
-          >
-            <Table columns={prCols} rows={prRows} />
-          </SoftBox>
-        </Card>
-        <SoftBox mt={3}>
+        <SoftBox mb={3}>
           <Card>
             <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
               <SoftTypography variant="h6">{context.title}</SoftTypography>
@@ -63,10 +46,27 @@ function Tables() {
             </SoftBox>
           </Card>
         </SoftBox>
+        {/* <Card>
+          <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
+            <SoftTypography variant="h6">Projects table</SoftTypography>
+          </SoftBox>
+          <SoftBox
+            sx={{
+              "& .MuiTableRow-root:not(:last-child)": {
+                "& td": {
+                  borderBottom: ({ borders: { borderWidth, borderColor } }) =>
+                    `${borderWidth[1]} solid ${borderColor}`,
+                },
+              },
+            }}
+          >
+            <Table columns={prCols} rows={prRows} />
+          </SoftBox>
+        </Card> */}
       </SoftBox>
       <Footer />
     </DashboardLayout>
   );
 }
 
-export default Tables;
+export default InspectionDashboard;

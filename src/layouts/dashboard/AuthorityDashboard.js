@@ -16,10 +16,10 @@ import authorsTableData from "layouts/tables/data/authorsTableData";
 import projectsTableData from "layouts/tables/data/projectsTableData";
 
 let context = {
-  title: "Order History",
+  title: "Order List",
 };
 
-function Tables() {
+function AuthorityDashboard() {
   const { columns, rows } = authorsTableData;
   const { columns: prCols, rows: prRows } = projectsTableData;
 
@@ -27,24 +27,7 @@ function Tables() {
     <DashboardLayout>
       <DashboardNavbar />
       <SoftBox py={3}>
-        <Card>
-          <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-            <SoftTypography variant="h6">Order List</SoftTypography>
-          </SoftBox>
-          <SoftBox
-            sx={{
-              "& .MuiTableRow-root:not(:last-child)": {
-                "& td": {
-                  borderBottom: ({ borders: { borderWidth, borderColor } }) =>
-                    `${borderWidth[1]} solid ${borderColor}`,
-                },
-              },
-            }}
-          >
-            <Table columns={prCols} rows={prRows} />
-          </SoftBox>
-        </Card>
-        <SoftBox mt={3}>
+        <SoftBox mb={3}>
           <Card>
             <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
               <SoftTypography variant="h6">{context.title}</SoftTypography>
@@ -69,4 +52,4 @@ function Tables() {
   );
 }
 
-export default Tables;
+export default AuthorityDashboard;

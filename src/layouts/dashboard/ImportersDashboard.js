@@ -19,7 +19,7 @@ let context = {
   title: "Order History",
 };
 
-function Tables() {
+function ImportersDashboard() {
   const { columns, rows } = authorsTableData;
   const { columns: prCols, rows: prRows } = projectsTableData;
 
@@ -27,24 +27,25 @@ function Tables() {
     <DashboardLayout>
       <DashboardNavbar />
       <SoftBox py={3}>
-        <Card>
-          <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-            <SoftTypography variant="h6">Order List</SoftTypography>
-          </SoftBox>
-          <SoftBox
-            sx={{
-              "& .MuiTableRow-root:not(:last-child)": {
-                "& td": {
-                  borderBottom: ({ borders: { borderWidth, borderColor } }) =>
-                    `${borderWidth[1]} solid ${borderColor}`,
+        <SoftBox mb={3}>
+          <Card>
+            <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
+              <SoftTypography variant="h6">Orders Status</SoftTypography>
+            </SoftBox>
+            <SoftBox
+              sx={{
+                "& .MuiTableRow-root:not(:last-child)": {
+                  "& td": {
+                    borderBottom: ({ borders: { borderWidth, borderColor } }) =>
+                      `${borderWidth[1]} solid ${borderColor}`,
+                  },
                 },
-              },
-            }}
-          >
-            <Table columns={prCols} rows={prRows} />
-          </SoftBox>
-        </Card>
-        <SoftBox mt={3}>
+              }}
+            >
+              <Table columns={prCols} rows={prRows} />
+            </SoftBox>
+          </Card>
+          <br />
           <Card>
             <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
               <SoftTypography variant="h6">{context.title}</SoftTypography>
@@ -69,4 +70,4 @@ function Tables() {
   );
 }
 
-export default Tables;
+export default ImportersDashboard;

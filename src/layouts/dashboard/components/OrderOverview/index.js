@@ -1,4 +1,3 @@
-
 // @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
@@ -35,35 +34,47 @@ function OrdersOverview() {
       <SoftBox p={2}>
         <TimelineItem
           color="success"
-          icon="notifications"
-          title="$2400, Design changes"
+          icon="verified_user"
+          title="Order Completed"
           dateTime="22 DEC 7:20 PM"
         />
         <TimelineItem
-          color="error"
-          icon="inventory_2"
-          title="New order #1832412"
+          color="warning"
+          icon="directions_boat"
+          title="In Transit"
+          dateTime="22 DEC 7:20 PM"
+        />
+        <TimelineItem
+          color="info"
+          icon="list_alt"
+          title="Bill Of Lading"
+          dateTime="22 DEC 7:20 PM"
+        />
+        <TimelineItem
+          color="info"
+          icon="handshake"
+          title="Bill of Shipping"
           dateTime="21 DEC 11 PM"
         />
         <TimelineItem
           color="info"
-          icon="shopping_cart"
-          title="Server payments for April"
+          icon="receipt_long"
+          title="Inspections"
           dateTime="21 DEC 9:34 PM"
         />
         <TimelineItem
           color="warning"
-          icon="payment"
-          title="New card added for order #4395133"
+          icon="local_shipping"
+          title="Shipping List - Customs"
           dateTime="20 DEC 2:20 AM"
         />
         <TimelineItem
           color="primary"
-          icon="vpn_key"
-          title="New card added for order #4395133"
+          icon="receipt"
+          title="Commercial Invoice"
           dateTime="18 DEC 4:54 AM"
         />
-        <TimelineItem color="dark" icon="paid" title="New order #9583120" dateTime="17 DEC" />
+        <TimelineItem color="dark" icon="paid" title="New order #4395133" dateTime="17 DEC" />
       </SoftBox>
     </Card>
   );
