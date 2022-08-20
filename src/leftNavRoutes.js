@@ -21,6 +21,7 @@ import InspectionDashboard from "layouts/dashboard/InspectionDashboard";
 import ImportersDashboard from "layouts/dashboard/ImportersDashboard";
 import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import { Icon } from "@mui/material";
+import BillOfLadingView from "layouts/formViews/BillOfLadingView";
 
 const routes = [
   {
@@ -50,15 +51,7 @@ const routes = [
     component: <Tables />,
     noCollapse: true,
   },
-  {
-    type: "collapse",
-    name: "Billing",
-    key: "billing",
-    route: "/billing",
-    icon: <CreditCard size="12px" />,
-    component: <Billing />,
-    noCollapse: true,
-  },
+
   { type: "title", title: "Users Dashboards", key: "account-pages" },
   {
     type: "collapse",

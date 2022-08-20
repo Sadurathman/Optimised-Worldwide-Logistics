@@ -1,4 +1,3 @@
-
 // @mui material components
 import Card from "@mui/material/Card";
 
@@ -14,7 +13,7 @@ function BillingInformation() {
     <Card id="delete-account">
       <SoftBox pt={3} px={2}>
         <SoftTypography variant="h6" fontWeight="medium">
-          Billing Information
+          Documentation
         </SoftTypography>
       </SoftBox>
       <SoftBox pt={1} pb={2} px={2}>

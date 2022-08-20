@@ -23,7 +23,7 @@ import leftNavRoutes from "leftNavRoutes";
 
 import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
-import brand from "assets/images/logo-ct.png";
+import brand from "assets/images/Logo.jpg";
 
 export default function App() {
   const [controller, dispatch] = useSoftUIController();
@@ -112,7 +112,7 @@ export default function App() {
             <Sidenav
               color={sidenavColor}
               brand={brand}
-              brandName="OWLS Dashboard"
+              brandName="OWLS"
               routes={leftNavRoutes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -136,7 +136,7 @@ export default function App() {
           <Sidenav
             color={sidenavColor}
             brand={brand}
-            brandName="OWLS Dashboard"
+            brandName="OWLS"
             routes={leftNavRoutes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}

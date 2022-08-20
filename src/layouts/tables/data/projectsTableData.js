@@ -14,6 +14,8 @@ import logoJira from "assets/images/small-logos/logo-jira.svg";
 import logoSlack from "assets/images/small-logos/logo-slack.svg";
 import logoWebDev from "assets/images/small-logos/logo-webdev.svg";
 import logoXD from "assets/images/small-logos/logo-xd.svg";
+import SoftButton from "components/SoftButton";
+import { Link } from "react-router-dom";
 
 function Completion({ value, color }) {
   return (
@@ -57,7 +59,11 @@ const projectsTableData = {
         </SoftTypography>
       ),
       completion: <Completion value={60} color="info" />,
-      action,
+      action: (
+        <Link to="/form/bill-of-landing-view">
+          <SoftButton color="info">View</SoftButton>
+        </Link>
+      ),
     },
     {
       order_id: 1241234,
@@ -72,7 +78,11 @@ const projectsTableData = {
         </SoftTypography>
       ),
       completion: <Completion value={100} color="success" />,
-      action,
+      action: (
+        <Link to="/billing">
+          <SoftButton color="info">View</SoftButton>,
+        </Link>
+      ),
     },
     {
       order_id: 124132413,
@@ -87,7 +97,7 @@ const projectsTableData = {
         </SoftTypography>
       ),
       completion: <Completion value={30} color="error" />,
-      action,
+      action: <SoftButton color="info">View</SoftButton>,
     },
     {
       order_id: 1241244,
@@ -102,7 +112,7 @@ const projectsTableData = {
         </SoftTypography>
       ),
       completion: <Completion value={0} color="error" />,
-      action,
+      action: <SoftButton color="info">View</SoftButton>,
     },
     {
       order_id: 12341234,
@@ -117,7 +127,7 @@ const projectsTableData = {
         </SoftTypography>
       ),
       completion: <Completion value={80} color="info" />,
-      action,
+      action: <SoftButton color="info">View</SoftButton>,
     },
     {
       order_id: 1241234,
@@ -132,7 +142,7 @@ const projectsTableData = {
         </SoftTypography>
       ),
       completion: <Completion value={100} color="success" />,
-      action,
+      action: <SoftButton color="info">View</SoftButton>,
     },
   ],
 };

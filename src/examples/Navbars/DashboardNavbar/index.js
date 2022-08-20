@@ -127,7 +127,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
               />
             </SoftBox> */}
             <SoftBox color={light ? "white" : "inherit"}>
-              <Link to="/form/create-contract">
+              {/* <Link to="/form/create-contract">
                 <IconButton sx={navbarIconButton} size="small">
                   <Icon
                     sx={({ palette: { dark, white } }) => ({
@@ -144,7 +144,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
                     Create Contract
                   </SoftTypography>
                 </IconButton>
-              </Link>
+              </Link> */}
               <IconButton
                 size="small"
                 color="inherit"

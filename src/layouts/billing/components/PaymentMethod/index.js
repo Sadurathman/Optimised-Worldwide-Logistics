@@ -1,4 +1,3 @@
-
 // @mui material components
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
@@ -24,12 +23,12 @@ function PaymentMethod() {
     <Card id="delete-account">
       <SoftBox pt={2} px={2} display="flex" justifyContent="space-between" alignItems="center">
         <SoftTypography variant="h6" fontWeight="medium">
-          Payment Method
+          Transit
         </SoftTypography>
-        <SoftButton variant="gradient" color="dark">
+        {/* <SoftButton variant="gradient" color="dark">
           <Icon sx={{ fontWeight: "bold" }}>add</Icon>
           &nbsp;add new card
-        </SoftButton>
+        </SoftButton> */}
       </SoftBox>
       <SoftBox p={2}>
         <Grid container spacing={3}>
@@ -42,9 +41,12 @@ function PaymentMethod() {
               alignItems="center"
               p={3}
             >
-              <SoftBox component="img" src={masterCardLogo} alt="master card" width="10%" mr={2} />
+              {/* <SoftBox component="img" src={masterCardLogo} alt="master card" width="10%" mr={2} />
               <SoftTypography variant="h6" fontWeight="medium">
                 ****&nbsp;&nbsp;****&nbsp;&nbsp;****&nbsp;&nbsp;7852
+              </SoftTypography> */}
+              <SoftTypography variant="h6" fontWeight="medium">
+                PORT A
               </SoftTypography>
               <SoftBox ml="auto" lineHeight={0}>
                 <Tooltip title="Edit Card" placement="top">
@@ -64,9 +66,12 @@ function PaymentMethod() {
               alignItems="center"
               p={3}
             >
-              <SoftBox component="img" src={visaLogo} alt="master card" width="10%" mr={2} />
+              {/* <SoftBox component="img" src={visaLogo} alt="master card" width="10%" mr={2} />
               <SoftTypography variant="h6" fontWeight="medium">
                 ****&nbsp;&nbsp;****&nbsp;&nbsp;****&nbsp;&nbsp;5248
+              </SoftTypography> */}
+              <SoftTypography variant="h6" fontWeight="medium">
+                PORT B
               </SoftTypography>
               <SoftBox ml="auto" lineHeight={0}>
                 <Tooltip title="Edit Card" placement="top">

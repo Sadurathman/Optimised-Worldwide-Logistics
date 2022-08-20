@@ -1,4 +1,3 @@
-
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -19,6 +18,7 @@ import PaymentMethod from "layouts/billing/components/PaymentMethod";
 import Invoices from "layouts/billing/components/Invoices";
 import BillingInformation from "layouts/billing/components/BillingInformation";
 import Transactions from "layouts/billing/components/Transactions";
+import OrdersOverview from "layouts/dashboard/components/OrderOverview";
 
 function Billing() {
   return (
@@ -35,7 +35,7 @@ function Billing() {
                 <Grid item xs={12} md={6} xl={3}>
                   <DefaultInfoCard
                     icon="account_balance"
-                    title="salary"
+                    title="Total Value Of Goods"
                     description="Belong Interactive"
                     value="+$2000"
                   />
@@ -64,7 +64,8 @@ function Billing() {
               <BillingInformation />
             </Grid>
             <Grid item xs={12} md={5}>
-              <Transactions />
+              {/* <Transactions /> */}
+              <OrdersOverview />
             </Grid>
           </Grid>
         </SoftBox>

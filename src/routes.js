@@ -24,6 +24,7 @@ import AuthorityDashboard from "layouts/dashboard/AuthorityDashboard";
 import InspectionDashboard from "layouts/dashboard/InspectionDashboard";
 import ImportersDashboard from "layouts/dashboard/ImportersDashboard";
 import Analytics from "layouts/dashboard/Analytics";
+import BillOfLadingView from "layouts/formViews/BillOfLadingView";
 
 const routes = [
   {
@@ -124,6 +125,15 @@ const routes = [
     route: "/form/bill-of-landing",
     icon: <SpaceShip size="12px" />,
     component: <BillOfLanding />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Bill Of Landing View",
+    key: "bill-of-landing-view",
+    route: "/form/bill-of-landing-view",
+    icon: <SpaceShip size="12px" />,
+    component: <BillOfLadingView />,
     noCollapse: true,
   },
   {

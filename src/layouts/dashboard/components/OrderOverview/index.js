@@ -16,7 +16,7 @@ function OrdersOverview() {
         <SoftTypography variant="h6" fontWeight="medium">
           Orders overview
         </SoftTypography>
-        <SoftBox mt={1} mb={2}>
+        {/* <SoftBox mt={1} mb={2}>
           <SoftTypography variant="button" color="text" fontWeight="regular">
             <SoftTypography display="inline" variant="body2" verticalAlign="middle">
               <Icon sx={{ fontWeight: "bold", color: ({ palette: { success } }) => success.main }}>
@@ -29,7 +29,7 @@ function OrdersOverview() {
             </SoftTypography>{" "}
             this month
           </SoftTypography>
-        </SoftBox>
+        </SoftBox> */}
       </SoftBox>
       <SoftBox p={2}>
         <TimelineItem

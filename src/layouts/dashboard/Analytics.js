@@ -21,6 +21,7 @@ import OrderOverview from "layouts/dashboard/components/OrderOverview";
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import gradientLineChartData from "layouts/dashboard/data/gradientLineChartData";
 import map from "assets/images/map.jpg";
+import MonthlyCostData from "./data/MontlyCostData";
 
 function Analytics() {
   const { size } = typography;
@@ -100,6 +101,29 @@ function Analytics() {
                 }
                 height="20.25rem"
                 chart={gradientLineChartData}
+              />
+            </Grid>
+          </Grid>
+          <Grid container spacing={3} mt={3}>
+            {/* <Grid item xs={12} lg={5}></Grid> */}
+            <Grid item xs={12} lg={12}>
+              <GradientLineChart
+                title="Monthly Cost Of Export"
+                description={
+                  <SoftBox display="flex" alignItems="center">
+                    <SoftBox fontSize={size.lg} color="error" mb={0.3} mr={0.5} lineHeight={0}>
+                      <Icon className="font-bold">arrow_upward</Icon>
+                    </SoftBox>
+                    <SoftTypography variant="button" color="text" fontWeight="medium">
+                      10% more{" "}
+                      <SoftTypography variant="button" color="text" fontWeight="regular">
+                        in 2022
+                      </SoftTypography>
+                    </SoftTypography>
+                  </SoftBox>
+                }
+                height="20.25rem"
+                chart={MonthlyCostData}
               />
             </Grid>
           </Grid>

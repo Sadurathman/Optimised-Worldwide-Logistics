@@ -1,4 +1,3 @@
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -9,6 +8,8 @@ import Icon from "@mui/material/Icon";
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftButton from "components/SoftButton";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import { Link } from "react-router-dom";
 
 function Bill({ name, company, email, vat, noGutter }) {
   return (
@@ -41,14 +42,16 @@ function Bill({ name, company, email, vat, noGutter }) {
             mt={{ xs: 2, sm: 0 }}
             ml={{ xs: -1.5, sm: 0 }}
           >
-            <SoftBox mr={1}>
+            {/* <SoftBox mr={1}>
               <SoftButton variant="text" color="error">
                 <Icon>delete</Icon>&nbsp;delete
               </SoftButton>
-            </SoftBox>
-            <SoftButton variant="text" color="dark">
-              <Icon>edit</Icon>&nbsp;edit
-            </SoftButton>
+            </SoftBox> */}
+            <Link to="/form/bill-of-landing-view/">
+              <SoftButton variant="text" color="info">
+                <VisibilityIcon></VisibilityIcon>&nbsp;view
+              </SoftButton>
+            </Link>
           </SoftBox>
         </SoftBox>
         <SoftBox mb={1} lineHeight={0}>
