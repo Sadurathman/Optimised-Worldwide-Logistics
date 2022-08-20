@@ -21,6 +21,83 @@ import curved6 from "assets/images/curved-images/curved14.jpg";
 import { Grid, Icon } from "@mui/material";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
+const data = {
+  fromName: "Sri Hari",
+  fromAddress: "Address",
+  fromLocation: "city-state-pincode",
+  sid: 1234,
+  fromFOB: true,
+  ladingNumber: 1234,
+  toName: "Tharun",
+  toAddress: "Add2",
+  toLocation: "to-loc",
+  location: "loc",
+  cid: 1234,
+  carrierName: "carrier_name",
+  trailerNumber: 12321,
+  sealNumbers: [12321, 123],
+  toFOB: true,
+  tpName: "Tp",
+  tpAddress: "Address tp",
+  tpLocation: "city-e-pincode",
+  specialInstruction: "be careful",
+  scac: "scac",
+  proNum: 12323,
+  prepaid: "$1200",
+  collect: "$3200",
+  tpCharge: "$600",
+  orderInfo: [
+    {
+      custOrderNum: 1234,
+      pkgs: 32,
+      weight: 43,
+      slip: "N",
+      additionalShipperInfo: "info add",
+    },
+    {
+      custOrderNum: 1234,
+      pkgs: 32,
+      weight: 43,
+      slip: "N",
+      additionalShipperInfo: "info add",
+    },
+    {
+      custOrderNum: 1234,
+      pkgs: 32,
+      weight: 43,
+      slip: "N",
+      additionalShipperInfo: "info add",
+    },
+    {
+      custOrderNum: 1234,
+      pkgs: 32,
+      weight: 43,
+      slip: "N",
+      additionalShipperInfo: "info add",
+    },
+    {
+      custOrderNum: 1234,
+      pkgs: 32,
+      weight: 43,
+      slip: "N",
+      additionalShipperInfo: "info add",
+    },
+  ],
+  carrierInfo: [
+    {
+      handQty: 123,
+      handType: "cryps",
+      packQty: 123,
+      packType: "pks",
+      weight: 23,
+      hm: 123,
+      description: "About the item",
+      nmfc: 213,
+      class: "class",
+    },
+  ],
+};
+
 function BillOfLadingView() {
   const [products, setProduct] = useState([1]);
   const [carrier, setCarrier] = useState([1]);
@@ -45,32 +122,42 @@ function BillOfLadingView() {
   };
 
   const productData = (ele) => {
-    // console.log(ele);
+    console.log(ele);
     return (
-      <Grid container spacing={2}>
+      <Grid container spacing={2} ml={2}>
         <Grid item xs={12} lg={4}>
-          <SoftBox pt={2}>
-            <SoftInput placeholder="Customer Order Number" />
+          <SoftBox pt={1}>
+            <SoftTypography variant="button" color="text" fontWeight="regular">
+              {ele.custOrderNum}
+            </SoftTypography>
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={1}>
-          <SoftBox pt={2}>
-            <SoftInput placeholder="#PKGS" />
+          <SoftBox pt={1}>
+            <SoftTypography variant="button" color="text" fontWeight="regular">
+              {ele.pkgs}
+            </SoftTypography>
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={2}>
-          <SoftBox pt={2}>
-            <SoftInput placeholder="Weight" />
+          <SoftBox pt={1}>
+            <SoftTypography variant="button" color="text" fontWeight="regular">
+              {ele.weight}
+            </SoftTypography>
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={2}>
-          <SoftBox pt={2}>
-            <SoftInput placeholder="(Y/N)" />
+          <SoftBox pt={1}>
+            <SoftTypography variant="button" color="text" fontWeight="regular">
+              {ele.slip}
+            </SoftTypography>
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={3}>
-          <SoftBox pt={2}>
-            <SoftInput placeholder="Additional Shipper Info" />
+          <SoftBox pt={1}>
+            <SoftTypography variant="button" color="text" fontWeight="regular">
+              {ele.additionalShipperInfo}
+            </SoftTypography>
           </SoftBox>
         </Grid>
       </Grid>
@@ -80,17 +167,21 @@ function BillOfLadingView() {
   const carrierInfo = (ele) => {
     // console.log(ele);
     return (
-      <Grid container spacing={2}>
+      <Grid container spacing={2} ml={1}>
         <Grid item xs={4} lg={2}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={5}>
-              <SoftBox pt={2}>
-                <SoftInput placeholder="QTY" />
+              <SoftBox pt={1}>
+                <SoftTypography variant="button" color="text" fontWeight="regular">
+                  {ele.handQty}
+                </SoftTypography>
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
-              <SoftBox pt={2}>
-                <SoftInput placeholder="Type" />
+              <SoftBox pt={1}>
+                <SoftTypography variant="button" color="text" fontWeight="regular">
+                  {ele.handType}
+                </SoftTypography>
               </SoftBox>
             </Grid>
           </Grid>
@@ -98,42 +189,56 @@ function BillOfLadingView() {
         <Grid item xs={4} lg={2}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={5}>
-              <SoftBox pt={2}>
-                <SoftInput placeholder="QTY" />
+              <SoftBox pt={1}>
+                <SoftTypography variant="button" color="text" fontWeight="regular">
+                  {ele.packQty}
+                </SoftTypography>
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
-              <SoftBox pt={2}>
-                <SoftInput placeholder="Type" />
+              <SoftBox pt={1}>
+                <SoftTypography variant="button" color="text" fontWeight="regular">
+                  {ele.packType}
+                </SoftTypography>
               </SoftBox>
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={2} lg={1}>
-          <SoftBox pt={2}>
-            <SoftInput placeholder="Weight" />
+          <SoftBox pt={1}>
+            <SoftTypography variant="button" color="text" fontWeight="regular">
+              {ele.weight}
+            </SoftTypography>
           </SoftBox>
         </Grid>
         <Grid item xs={2} lg={1}>
-          <SoftBox pt={2}>
-            <SoftInput placeholder="H.M" />
+          <SoftBox pt={1}>
+            <SoftTypography variant="button" color="text" fontWeight="regular">
+              {ele.hm}
+            </SoftTypography>
           </SoftBox>
         </Grid>
         <Grid item xs={8} lg={4}>
-          <SoftBox pt={2}>
-            <SoftInput placeholder="Commodity Description" />
+          <SoftBox pt={1}>
+            <SoftTypography variant="button" color="text" fontWeight="regular">
+              {ele.description}
+            </SoftTypography>
           </SoftBox>
         </Grid>
         <Grid item xs={4} lg={2}>
-          <Grid container spacing={3}>
+          <Grid container spacing={2}>
             <Grid item xs={12} lg={5}>
-              <SoftBox pt={2}>
-                <SoftInput placeholder="NMFC#" />
+              <SoftBox pt={1}>
+                <SoftTypography variant="button" color="text" fontWeight="regular">
+                  {ele.nmfc}
+                </SoftTypography>
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
-              <SoftBox pt={2}>
-                <SoftInput placeholder="Class" />
+              <SoftBox pt={1}>
+                <SoftTypography variant="button" color="text" fontWeight="regular">
+                  {ele.class}
+                </SoftTypography>
               </SoftBox>
             </Grid>
           </Grid>
@@ -156,145 +261,235 @@ function BillOfLadingView() {
             Bill Of Landing
           </SoftTypography>
         </SoftBox>
-        <SoftBox pt={2} pb={3} ml={6} px={6}>
+        <SoftBox pt={1} pb={3} ml={6} px={6}>
           <Grid container spacing={6}>
             <Grid item xs={12} lg={5}>
-              <SoftTypography variant="h6" fontWeight="medium" pt={2} pb={3} px={3}>
+              <SoftTypography variant="h6" fontWeight="medium" pt={1} pb={3} px={3}>
                 Ship From
               </SoftTypography>
               <SoftBox component="form" role="form">
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="Name" value="Sri Hari" disabled={true} />
-                </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput
-                    placeholder="Address"
-                    value="23, Gandhi nagar, Logicstics, chennai - 600002"
-                    disabled={true}
-                  />
-                </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput
-                    placeholder="City/State/Zip"
-                    value="chennai/TN/600002"
-                    disabled={true}
-                  />
-                </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="SID#" value="778899" disabled={true} />
-                </SoftBox>
-                <SoftBox display="flex" alignItems="center">
-                  <Checkbox checked={true} onChange={handleSetFromFOB} disabled={true} />
-                  <SoftTypography
-                    variant="button"
-                    fontWeight="regular"
-                    onClick={handleSetFromFOB}
-                    sx={{ cursor: "poiner", userSelect: "none" }}
-                  >
-                    &nbsp;&nbsp;FOB&nbsp;
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    Name :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.fromName}
+                    </SoftTypography>
                   </SoftTypography>
+                </SoftBox>
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    Address :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.fromAddress}
+                    </SoftTypography>
+                  </SoftTypography>
+                </SoftBox>
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    City/State/PIN :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.fromLocation}
+                    </SoftTypography>
+                  </SoftTypography>
+                </SoftBox>
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    SID# :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.sid}
+                    </SoftTypography>
+                  </SoftTypography>
+                </SoftBox>
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" fontWeight="medium" color="text">
+                    FOB :&nbsp;&nbsp;
+                  </SoftTypography>
+                  <Checkbox checked={true} />
                 </SoftBox>
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
-              <SoftBox mt={6} pt={2} pb={3}>
-                <SoftInput placeholder="Bill Of Landing Number" value="11223344" disabled={true} />
+              <SoftBox mt={6} pt={1} pb={3}>
+                <SoftTypography variant="button" color="text" fontWeight="medium">
+                  Bill Of Lading Number :{" "}
+                  <SoftTypography variant="button" color="text" fontWeight="regular">
+                    {data.ladingNumber}
+                  </SoftTypography>
+                </SoftTypography>
               </SoftBox>
             </Grid>
           </Grid>
           <Grid container spacing={6}>
             <Grid item xs={12} lg={5}>
-              <SoftTypography variant="h6" fontWeight="medium" mt={3} pt={2} pb={3} px={3}>
+              <SoftTypography variant="h6" fontWeight="medium" mt={3} pt={1} pb={3} px={3}>
                 Ship To
               </SoftTypography>
-              <SoftBox component="form" role="form">
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="Name" />
-                </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="Address" />
-                </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="City/State/Zip" />
-                </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="Location#" />
-                </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="CID#" />
-                </SoftBox>
-                <SoftBox display="flex" alignItems="center">
-                  <Checkbox checked={true} onChange={handleSetToFOB} disabled={true} />
-                  <SoftTypography
-                    variant="button"
-                    fontWeight="regular"
-                    onClick={handleSetToFOB}
-                    sx={{ cursor: "poiner", userSelect: "none" }}
-                  >
-                    &nbsp;&nbsp;FOB&nbsp;
+              <SoftBox mb={1}>
+                <SoftTypography variant="button" color="text" fontWeight="medium">
+                  Name :{" "}
+                  <SoftTypography variant="button" color="text" fontWeight="regular">
+                    {data.toName}
                   </SoftTypography>
-                </SoftBox>
+                </SoftTypography>
+              </SoftBox>
+              <SoftBox mb={1}>
+                <SoftTypography variant="button" color="text" fontWeight="medium">
+                  Address :{" "}
+                  <SoftTypography variant="button" color="text" fontWeight="regular">
+                    {data.toAddress}
+                  </SoftTypography>
+                </SoftTypography>
+              </SoftBox>
+              <SoftBox mb={1}>
+                <SoftTypography variant="button" color="text" fontWeight="medium">
+                  City/State/PIN :{" "}
+                  <SoftTypography variant="button" color="text" fontWeight="regular">
+                    {data.toLocation}
+                  </SoftTypography>
+                </SoftTypography>
+              </SoftBox>
+              <SoftBox mb={1}>
+                <SoftTypography variant="button" color="text" fontWeight="medium">
+                  Location :{" "}
+                  <SoftTypography variant="button" color="text" fontWeight="regular">
+                    {data.location}
+                  </SoftTypography>
+                </SoftTypography>
+              </SoftBox>
+              <SoftBox mb={1}>
+                <SoftTypography variant="button" color="text" fontWeight="medium">
+                  CID# :{" "}
+                  <SoftTypography variant="button" color="text" fontWeight="regular">
+                    {data.cid}
+                  </SoftTypography>
+                </SoftTypography>
+              </SoftBox>
+              <SoftBox mb={1}>
+                <SoftTypography variant="button" fontWeight="medium" color="text">
+                  FOB :&nbsp;&nbsp;
+                </SoftTypography>
+                <Checkbox checked={true} />
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
-              <SoftBox mt={9} pt={2} pb={3}>
-                <SoftInput placeholder="Carrier Name" />
+              <SoftBox mt={9} pt={1} pb={3}>
+                <SoftTypography variant="button" color="text" fontWeight="medium">
+                  Carrier Name :{" "}
+                  <SoftTypography variant="button" color="text" fontWeight="regular">
+                    {data.carrierName}
+                  </SoftTypography>
+                </SoftTypography>
               </SoftBox>
-              <SoftBox mb={2}>
-                <SoftInput placeholder="Trailer Number" />
+              <SoftBox mb={1}>
+                <SoftTypography variant="button" color="text" fontWeight="medium">
+                  Trailer Number :{" "}
+                  <SoftTypography variant="button" color="text" fontWeight="regular">
+                    {data.trailerNumber}
+                  </SoftTypography>
+                </SoftTypography>
               </SoftBox>
-              <SoftBox mb={2}>
-                <SoftInput placeholder="Seal Number(s)" />
+              <SoftBox mb={1}>
+                <SoftTypography variant="button" color="text" fontWeight="medium">
+                  Seal Number(s) :{" "}
+                  <SoftTypography variant="button" color="text" fontWeight="regular">
+                    {data.sealNumbers?.map((num) => num + ", ")}
+                  </SoftTypography>
+                </SoftTypography>
               </SoftBox>
             </Grid>
           </Grid>
           <Grid container spacing={6}>
             <Grid item xs={12} lg={5}>
-              <SoftTypography variant="h6" fontWeight="medium" mt={3} pt={2} pb={3} px={3}>
+              <SoftTypography variant="h6" fontWeight="medium" mt={3} pt={1} pb={3} px={3}>
                 Third Party Freight Charges Bill To
               </SoftTypography>
               <SoftBox component="form" role="form">
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="Name" />
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    Name :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.tpName}
+                    </SoftTypography>
+                  </SoftTypography>
                 </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="Address" />
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    Address :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.tpAddress}
+                    </SoftTypography>
+                  </SoftTypography>
                 </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="City/State/Zip" />
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    City/State/PIN :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.tpLocation}
+                    </SoftTypography>
+                  </SoftTypography>
                 </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="Special Instructions" />
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    Special instructions :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.specialInstruction}
+                    </SoftTypography>
+                  </SoftTypography>
                 </SoftBox>
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
               <SoftBox mb={3}>
-                <SoftBox mt={9} pt={2} pb={3}>
-                  <SoftInput placeholder="SCAC" />
+                <SoftBox mt={9} pt={1} pb={3}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    SCAC :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.scac}
+                    </SoftTypography>
+                  </SoftTypography>
                 </SoftBox>
-                <SoftBox mb={2}>
-                  <SoftInput placeholder="Pro Number" />
+                <SoftBox mb={1}>
+                  <SoftTypography variant="button" color="text" fontWeight="medium">
+                    Pro Number :{" "}
+                    <SoftTypography variant="button" color="text" fontWeight="regular">
+                      {data.proNum}
+                    </SoftTypography>
+                  </SoftTypography>
                 </SoftBox>
               </SoftBox>
               <SoftBox>
-                <SoftTypography variant="h6" fontWeight="medium" mt={3} pt={2} pb={3}>
+                <SoftTypography variant="h6" fontWeight="medium" mt={3} pt={1} pb={3}>
                   Freight Charge Terms: <p>(freight charges are prepaid unless marked otherwise)</p>
                 </SoftTypography>
                 <Grid container spacing={2}>
                   <Grid item xs={8} lg={4}>
-                    <SoftBox mb={2}>
-                      <SoftInput placeholder="Prepaid" />
+                    <SoftBox mb={1}>
+                      <SoftTypography variant="button" color="text" fontWeight="medium">
+                        Prepaid:{" "}
+                        <SoftTypography variant="button" color="text" fontWeight="regular">
+                          {data.prepaid}
+                        </SoftTypography>
+                      </SoftTypography>
                     </SoftBox>
                   </Grid>
                   <Grid item xs={8} lg={4}>
-                    <SoftBox mb={2}>
-                      <SoftInput placeholder="Collect" />
+                    <SoftBox mb={1}>
+                      <SoftTypography variant="button" color="text" fontWeight="medium">
+                        Collect :{" "}
+                        <SoftTypography variant="button" color="text" fontWeight="regular">
+                          {data.collect}
+                        </SoftTypography>
+                      </SoftTypography>
                     </SoftBox>
                   </Grid>
                   <Grid item xs={8} lg={4}>
-                    <SoftBox mb={2}>
-                      <SoftInput placeholder="3rd Party" />
+                    <SoftBox mb={1}>
+                      <SoftTypography variant="button" color="text" fontWeight="medium">
+                        3rd Party :{" "}
+                        <SoftTypography variant="button" color="text" fontWeight="regular">
+                          {data.tpCharge}
+                        </SoftTypography>
+                      </SoftTypography>
                     </SoftBox>
                   </Grid>
                 </Grid>
@@ -333,25 +528,13 @@ function BillOfLadingView() {
                   </SoftTypography>
                 </Grid>
               </Grid>
-              {products.map((ele) => {
+              {data?.orderInfo.map((ele) => {
                 return (
-                  <Grid item key={ele}>
+                  <Grid item key={ele.cid}>
                     {productData(ele)}
                   </Grid>
                 );
               })}
-              <Grid container spacing={2} mt={1}>
-                <Grid item>
-                  <SoftButton variant="gradient" color="success" onClick={addProductHandler}>
-                    <Icon>add</Icon>&nbsp;&nbsp;Add
-                  </SoftButton>
-                </Grid>
-                <Grid item>
-                  <SoftButton variant="gradient" color="error" onClick={removeProductHandler}>
-                    <Icon>remove</Icon>&nbsp;&nbsp;Remove
-                  </SoftButton>
-                </Grid>
-              </Grid>
             </Grid>
           </Grid>
 
@@ -488,7 +671,7 @@ function BillOfLadingView() {
                   </Grid>
                 </Grid>
               </Grid>
-              {carrier.map((ele) => {
+              {data?.carrierInfo.map((ele) => {
                 return (
                   <Grid item key={ele}>
                     {carrierInfo(ele)}
@@ -498,23 +681,17 @@ function BillOfLadingView() {
               <Grid container spacing={2} mt={1}>
                 <Grid item>
                   <SoftButton variant="gradient" color="success" onClick={addCarrierHandler}>
-                    <Icon>add</Icon>&nbsp;&nbsp;Add
+                    <Icon>add</Icon>&nbsp;&nbsp;Approve
                   </SoftButton>
                 </Grid>
                 <Grid item>
                   <SoftButton variant="gradient" color="error" onClick={removeCarrierHandler}>
-                    <Icon>remove</Icon>&nbsp;&nbsp;Remove
+                    <Icon>remove</Icon>&nbsp;&nbsp;Reject
                   </SoftButton>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
-
-          <SoftBox mt={4} mb={1}>
-            <SoftButton variant="gradient" color="dark">
-              Submit
-            </SoftButton>
-          </SoftBox>
         </SoftBox>
       </Card>
     </DashboardLayout>

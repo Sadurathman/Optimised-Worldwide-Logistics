@@ -25,6 +25,7 @@ import InspectionDashboard from "layouts/dashboard/InspectionDashboard";
 import ImportersDashboard from "layouts/dashboard/ImportersDashboard";
 import Analytics from "layouts/dashboard/Analytics";
 import BillOfLadingView from "layouts/formViews/BillOfLadingView";
+import CommercialInvoiceView from "layouts/formViews/CommercialInvoiceView";
 
 const routes = [
   {
@@ -143,6 +144,15 @@ const routes = [
     route: "/form/commercial-invoice",
     icon: <SpaceShip size="12px" />,
     component: <CommercialInvoice />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Commercial Invoice View",
+    key: "commercial-invoice-view",
+    route: "/form/commercial-invoice-view",
+    icon: <SpaceShip size="12px" />,
+    component: <CommercialInvoiceView />,
     noCollapse: true,
   },
   {

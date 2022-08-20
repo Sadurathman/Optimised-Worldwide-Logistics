@@ -45,7 +45,7 @@ function Contracts() {
               </Link>
             </Grid>
             <Grid item xs={12} sm={6} xl={3}>
-              <Link to="/form/create-contract">
+              <Link to="/form/commercial-invoice-view">
                 <SoftButton variant="outlined" color="info">
                   <Icon>table</Icon>&nbsp; View Contract
                 </SoftButton>

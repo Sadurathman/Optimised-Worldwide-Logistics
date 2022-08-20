@@ -153,7 +153,7 @@ function BillOfLanding() {
       <Card>
         <SoftBox p={3} mb={1} textAlign="center">
           <SoftTypography variant="h4" fontWeight="medium">
-            Bill Of Landing
+            Bill Of Lading
           </SoftTypography>
         </SoftBox>
         <SoftBox pt={2} pb={3} ml={6} px={6}>
