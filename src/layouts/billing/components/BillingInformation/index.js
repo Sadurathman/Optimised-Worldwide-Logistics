@@ -19,19 +19,19 @@ function BillingInformation() {
       <SoftBox pt={1} pb={2} px={2}>
         <SoftBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
           <Bill
-            name="oliver liam"
+            name="Bill Of Lading"
             company="viking burrito"
             email="oliver@burrito.com"
             vat="FRB1235476"
           />
           <Bill
-            name="lucas harper"
+            name="Bill Of Shipping"
             company="stone tech zone"
             email="lucas@stone-tech.com"
             vat="FRB1235476"
           />
           <Bill
-            name="ethan james"
+            name="Commercial Invoice"
             company="fiber notion"
             email="ethan@fiber.com"
             vat="FRB1235476"

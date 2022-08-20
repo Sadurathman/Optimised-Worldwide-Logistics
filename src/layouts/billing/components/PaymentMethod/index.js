@@ -46,7 +46,7 @@ function PaymentMethod() {
                 ****&nbsp;&nbsp;****&nbsp;&nbsp;****&nbsp;&nbsp;7852
               </SoftTypography> */}
               <SoftTypography variant="h6" fontWeight="medium">
-                PORT A
+                Buenos Aires, AR
               </SoftTypography>
               <SoftBox ml="auto" lineHeight={0}>
                 <Tooltip title="Edit Card" placement="top">
@@ -71,7 +71,7 @@ function PaymentMethod() {
                 ****&nbsp;&nbsp;****&nbsp;&nbsp;****&nbsp;&nbsp;5248
               </SoftTypography> */}
               <SoftTypography variant="h6" fontWeight="medium">
-                PORT B
+                Rotterdam, ZH, NL
               </SoftTypography>
               <SoftBox ml="auto" lineHeight={0}>
                 <Tooltip title="Edit Card" placement="top">
