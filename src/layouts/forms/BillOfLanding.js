@@ -21,76 +21,196 @@ import curved6 from "assets/images/curved-images/curved14.jpg";
 import { Grid, Icon } from "@mui/material";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
+const datas = {
+  fromName: "",
+  fromAddress: "",
+  fromLocation: "",
+  sid: "",
+  fromFOB: false,
+  ladingNumber: "",
+  toName: "",
+  toAddress: "",
+  toLocation: "",
+  location: "",
+  cid: "",
+  carrierName: "",
+  trailerNumber: "",
+  sealNumbers: "",
+  toFOB: false,
+  tpName: "",
+  tpAddress: "",
+  tpLocation: "",
+  specialInstruction: "",
+  scac: "",
+  proNum: "",
+  prepaid: "",
+  collect: "",
+  tpCharge: "",
+  orderInfo: [
+    {
+      custOrderNum: "",
+      pkgs: "",
+      weight: "",
+      slip: "",
+      additionalShipperInfo: "",
+    },
+  ],
+  carrierInfo: [
+    {
+      handQty: "",
+      handType: "",
+      packQty: "",
+      packType: "",
+      weight: "",
+      hm: "",
+      description: "",
+      nmfc: "",
+      class: "",
+    },
+  ],
+};
+
 function BillOfLanding() {
   const [products, setProduct] = useState([1]);
   const [carrier, setCarrier] = useState([1]);
+  const [data, setData] = useState(datas);
 
   const addProductHandler = () => {
-    products.push(products[products.length]);
-    setProduct([...products]);
-    console.log(products);
+    const newProd = {
+      custOrderNum: "",
+      pkgs: "",
+      weight: "",
+      slip: "",
+      additionalShipperInfo: "",
+    };
+
+    data?.orderInfo?.push(newProd);
+    setData({ ...data });
+    console.log(data);
+    // console.log(data.orderInfo);
+    // console.log(products);
   };
   const removeProductHandler = () => {
-    products.pop();
-    setProduct([...products]);
+    data.orderInfo.pop();
+    setData({ ...data });
   };
 
   const addCarrierHandler = () => {
-    carrier.push(carrier[carrier.length]);
-    setCarrier([...carrier]);
+    const newCarrier = {
+      handQty: "",
+      handType: "",
+      packQty: "",
+      packType: "",
+      weight: "",
+      hm: "",
+      description: "",
+      nmfc: "",
+      class: "",
+    };
+    data?.carrierInfo?.push(newCarrier);
+    setData({ ...data });
   };
   const removeCarrierHandler = () => {
-    carrier.pop();
-    setCarrier([...carrier]);
+    data?.carrierInfo?.pop();
+    setData({ ...data });
   };
 
-  const productData = (ele) => {
+  const productData = (idx) => {
     // console.log(ele);
     return (
       <Grid container spacing={2}>
         <Grid item xs={12} lg={4}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="Customer Order Number" />
+            <SoftInput
+              placeholder="Customer Order Number"
+              value={data.orderInfo[idx].custOrderNum}
+              onChange={(e) => {
+                data.orderInfo[idx].custOrderNum = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={1}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="#PKGS" />
+            <SoftInput
+              placeholder="#PKGS"
+              value={data.orderInfo[idx].pkgs}
+              onChange={(e) => {
+                data.orderInfo[idx].pkgs = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={2}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="Weight" />
+            <SoftInput
+              placeholder="Weight"
+              value={data.orderInfo[idx].weight}
+              onChange={(e) => {
+                data.orderInfo[idx].weight = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={2}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="(Y/N)" />
+            <SoftInput
+              placeholder="(Y/N)"
+              value={data.orderInfo[idx].slip}
+              onChange={(e) => {
+                data.orderInfo[idx].slip = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={3}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="Additional Shipper Info" />
+            <SoftInput
+              placeholder="Additional Shipper Info"
+              value={data.orderInfo[idx].additionalShipperInfo}
+              onChange={(e) => {
+                data.orderInfo[idx].additionalShipperInfo = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
       </Grid>
     );
   };
 
-  const carrierInfo = (ele) => {
-    // console.log(ele);
+  const carrierInfo = (idx) => {
+    console.log(data.carrierInfo);
     return (
       <Grid container spacing={2}>
         <Grid item xs={4} lg={2}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={5}>
               <SoftBox pt={2}>
-                <SoftInput placeholder="QTY" />
+                <SoftInput
+                  placeholder="QTY"
+                  value={data.carrierInfo[idx].handQty}
+                  onChange={(e) => {
+                    data.carrierInfo[idx].handQty = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
               <SoftBox pt={2}>
-                <SoftInput placeholder="Type" />
+                <SoftInput
+                  placeholder="Type"
+                  value={data.carrierInfo[idx].handType}
+                  onChange={(e) => {
+                    data.carrierInfo[idx].handType = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
           </Grid>
@@ -99,41 +219,90 @@ function BillOfLanding() {
           <Grid container spacing={3}>
             <Grid item xs={12} lg={5}>
               <SoftBox pt={2}>
-                <SoftInput placeholder="QTY" />
+                <SoftInput
+                  placeholder="QTY"
+                  value={data.carrierInfo[idx].packQty}
+                  onChange={(e) => {
+                    data.carrierInfo[idx].packQty = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
               <SoftBox pt={2}>
-                <SoftInput placeholder="Type" />
+                <SoftInput
+                  placeholder="Type"
+                  value={data.carrierInfo[idx].packType}
+                  onChange={(e) => {
+                    data.carrierInfo[idx].packType = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={2} lg={1}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="Weight" />
+            <SoftInput
+              placeholder="Weight"
+              value={data.carrierInfo[idx].weight}
+              onChange={(e) => {
+                data.carrierInfo[idx].weight = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={2} lg={1}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="H.M" />
+            <SoftInput
+              placeholder="H.M"
+              value={data.carrierInfo[idx].hm}
+              onChange={(e) => {
+                data.carrierInfo[idx].hm = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={8} lg={4}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="Commodity Description" />
+            <SoftInput
+              placeholder="Commodity Description"
+              value={data.carrierInfo[idx].description}
+              onChange={(e) => {
+                data.carrierInfo[idx].description = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={4} lg={2}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={5}>
               <SoftBox pt={2}>
-                <SoftInput placeholder="NMFC#" />
+                <SoftInput
+                  placeholder="NMFC#"
+                  value={data.carrierInfo[idx].nmfc}
+                  onChange={(e) => {
+                    data.carrierInfo[idx].nmfc = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
               <SoftBox pt={2}>
-                <SoftInput placeholder="Class" />
+                <SoftInput
+                  placeholder="Class"
+                  value={data.carrierInfo[idx].class}
+                  onChange={(e) => {
+                    data.carrierInfo[idx].class = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
           </Grid>
@@ -164,16 +333,44 @@ function BillOfLanding() {
               </SoftTypography>
               <SoftBox component="form" role="form">
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="Name" />
+                  <SoftInput
+                    placeholder="Name"
+                    value={data.fromName}
+                    onChange={(e) => {
+                      data.fromName = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="Address" />
+                  <SoftInput
+                    placeholder="Address"
+                    value={data.fromAddress}
+                    onChange={(e) => {
+                      data.fromAddress = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="City/State/Zip" />
+                  <SoftInput
+                    placeholder="City/State/Zip"
+                    value={data.fromLocation}
+                    onChange={(e) => {
+                      data.fromLocation = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="SID#" />
+                  <SoftInput
+                    placeholder="SID#"
+                    value={data.sid}
+                    onChange={(e) => {
+                      data.sid = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox display="flex" alignItems="center">
                   <Checkbox checked={fromFOB} onChange={handleSetFromFOB} />
@@ -190,7 +387,14 @@ function BillOfLanding() {
             </Grid>
             <Grid item xs={12} lg={5}>
               <SoftBox mt={6} pt={2} pb={3}>
-                <SoftInput placeholder="Bill Of Landing Number" />
+                <SoftInput
+                  placeholder="Bill Of Lading Number"
+                  value={data.ladingNumber}
+                  onChange={(e) => {
+                    data.ladingNumber = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
           </Grid>
@@ -201,19 +405,54 @@ function BillOfLanding() {
               </SoftTypography>
               <SoftBox component="form" role="form">
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="Name" />
+                  <SoftInput
+                    placeholder="Name"
+                    value={data.toName}
+                    onChange={(e) => {
+                      data.toName = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="Address" />
+                  <SoftInput
+                    placeholder="Address"
+                    value={data.toAddress}
+                    onChange={(e) => {
+                      data.toAddress = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="City/State/Zip" />
+                  <SoftInput
+                    placeholder="City/State/Zip"
+                    value={data.toLocation}
+                    onChange={(e) => {
+                      data.toLocation = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="Location#" />
+                  <SoftInput
+                    placeholder="Location#"
+                    value={data.location}
+                    onChange={(e) => {
+                      data.location = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="CID#" />
+                  <SoftInput
+                    placeholder="CID#"
+                    value={data.cid}
+                    onChange={(e) => {
+                      data.cid = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox display="flex" alignItems="center">
                   <Checkbox checked={toFOB} onChange={handleSetToFOB} />
@@ -230,13 +469,34 @@ function BillOfLanding() {
             </Grid>
             <Grid item xs={12} lg={5}>
               <SoftBox mt={9} pt={2} pb={3}>
-                <SoftInput placeholder="Carrier Name" />
+                <SoftInput
+                  placeholder="Carrier Name"
+                  value={data.carrierName}
+                  onChange={(e) => {
+                    data.carrierName = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Trailer Number" />
+                <SoftInput
+                  placeholder="Trailer Number"
+                  value={data.trailerNumber}
+                  onChange={(e) => {
+                    data.trailerNumber = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Seal Number(s)" />
+                <SoftInput
+                  placeholder="Seal Number(s)"
+                  value={data.sealNumbers}
+                  onChange={(e) => {
+                    data.sealNumbers = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
           </Grid>
@@ -247,26 +507,68 @@ function BillOfLanding() {
               </SoftTypography>
               <SoftBox component="form" role="form">
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="Name" />
+                  <SoftInput
+                    placeholder="Name"
+                    value={data.tpName}
+                    onChange={(e) => {
+                      data.tpName = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="Address" />
+                  <SoftInput
+                    placeholder="Address"
+                    value={data.tpAddress}
+                    onChange={(e) => {
+                      data.tpAddress = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="City/State/Zip" />
+                  <SoftInput
+                    placeholder="City/State/Zip"
+                    value={data.tpLocation}
+                    onChange={(e) => {
+                      data.tpLocation = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="Special Instructions" />
+                  <SoftInput
+                    placeholder="Special Instructions"
+                    value={data.specialInstruction}
+                    onChange={(e) => {
+                      data.specialInstruction = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
               <SoftBox mb={3}>
                 <SoftBox mt={9} pt={2} pb={3}>
-                  <SoftInput placeholder="SCAC" />
+                  <SoftInput
+                    placeholder="SCAC"
+                    value={data.scac}
+                    onChange={(e) => {
+                      data.scac = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
                 <SoftBox mb={2}>
-                  <SoftInput placeholder="Pro Number" />
+                  <SoftInput
+                    placeholder="Pro Number"
+                    value={data.proNum}
+                    onChange={(e) => {
+                      data.proNum = e.target.value;
+                      setData({ ...data });
+                    }}
+                  />
                 </SoftBox>
               </SoftBox>
               <SoftBox>
@@ -276,17 +578,38 @@ function BillOfLanding() {
                 <Grid container spacing={2}>
                   <Grid item xs={8} lg={4}>
                     <SoftBox mb={2}>
-                      <SoftInput placeholder="Prepaid" />
+                      <SoftInput
+                        placeholder="Prepaid"
+                        value={data.prepaid}
+                        onChange={(e) => {
+                          data.prepaid = e.target.value;
+                          setData({ ...data });
+                        }}
+                      />
                     </SoftBox>
                   </Grid>
                   <Grid item xs={8} lg={4}>
                     <SoftBox mb={2}>
-                      <SoftInput placeholder="Collect" />
+                      <SoftInput
+                        placeholder="Collect"
+                        value={data.collect}
+                        onChange={(e) => {
+                          data.collect = e.target.value;
+                          setData({ ...data });
+                        }}
+                      />
                     </SoftBox>
                   </Grid>
                   <Grid item xs={8} lg={4}>
                     <SoftBox mb={2}>
-                      <SoftInput placeholder="3rd Party" />
+                      <SoftInput
+                        placeholder="3rd Party"
+                        value={data.tpCharge}
+                        onChange={(e) => {
+                          data.tpCharge = e.target.value;
+                          setData({ ...data });
+                        }}
+                      />
                     </SoftBox>
                   </Grid>
                 </Grid>
@@ -325,10 +648,10 @@ function BillOfLanding() {
                   </SoftTypography>
                 </Grid>
               </Grid>
-              {products.map((ele) => {
+              {data?.orderInfo?.map((ele, idx) => {
                 return (
-                  <Grid item key={ele}>
-                    {productData(ele)}
+                  <Grid item key={idx}>
+                    {productData(idx)}
                   </Grid>
                 );
               })}
@@ -480,10 +803,10 @@ function BillOfLanding() {
                   </Grid>
                 </Grid>
               </Grid>
-              {carrier.map((ele) => {
+              {data?.carrierInfo?.map((ele, idx) => {
                 return (
-                  <Grid item key={ele}>
-                    {carrierInfo(ele)}
+                  <Grid item key={idx}>
+                    {carrierInfo(idx)}
                   </Grid>
                 );
               })}

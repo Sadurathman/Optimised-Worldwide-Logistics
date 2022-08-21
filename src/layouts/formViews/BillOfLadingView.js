@@ -95,6 +95,39 @@ const data = {
       nmfc: 213,
       class: "class",
     },
+    {
+      handQty: 123,
+      handType: "cryps",
+      packQty: 123,
+      packType: "pks",
+      weight: 23,
+      hm: 123,
+      description: "About the item",
+      nmfc: 213,
+      class: "class",
+    },
+    {
+      handQty: 123,
+      handType: "cryps",
+      packQty: 123,
+      packType: "pks",
+      weight: 23,
+      hm: 123,
+      description: "About the item",
+      nmfc: 213,
+      class: "class",
+    },
+    {
+      handQty: 123,
+      handType: "cryps",
+      packQty: 123,
+      packType: "pks",
+      weight: 23,
+      hm: 123,
+      description: "About the item",
+      nmfc: 213,
+      class: "class",
+    },
   ],
 };
 
@@ -258,7 +291,7 @@ function BillOfLadingView() {
       <Card>
         <SoftBox p={3} mb={1} textAlign="center">
           <SoftTypography variant="h4" fontWeight="medium">
-            Bill Of Landing
+            Bill Of Lading
           </SoftTypography>
         </SoftBox>
         <SoftBox pt={1} pb={3} ml={6} px={6}>
@@ -654,7 +687,7 @@ function BillOfLadingView() {
                         ml={1}
                         textAlign="center"
                       >
-                        NMFC#
+                        NMFC
                       </SoftTypography>
                     </Grid>
                     <Grid item xs={12} lg={5}>

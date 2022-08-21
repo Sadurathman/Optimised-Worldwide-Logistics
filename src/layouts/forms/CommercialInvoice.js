@@ -21,45 +21,118 @@ import curved6 from "assets/images/curved-images/curved14.jpg";
 import { Button, Grid, Icon } from "@mui/material";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
+const datas = {
+  vendor: "",
+  consignee: "",
+  invoiceNum: "",
+  dateOfShipment: "",
+  letterOfCreditNumber: "",
+  awbNum: "",
+  currency: "",
+  origin: "",
+  condition: "",
+  importer: "",
+  via: "",
+  from: "",
+  totNetWeight: "",
+  totGrossWeight: "",
+  totInvoice: "",
+  name: "",
+  signature: "",
+  date: "",
+  products: [
+    {
+      desc: "",
+      qty: "",
+      weight: "",
+      price: "",
+      total: "",
+    },
+  ],
+};
+
 function CommercialInvoice() {
-  const [products, setProduct] = useState([1]);
+  const [data, setData] = useState(datas);
+  // const [products, setProduct] = useState([1]);
 
   const addProductHandler = () => {
-    products.push(products[products.length]);
-    setProduct([...products]);
+    const newProd = {
+      desc: "",
+      qty: "",
+      weight: "",
+      price: "",
+      total: "",
+    };
+    data.products.push(newProd);
+    setData({ ...data });
   };
   const removeProductHandler = () => {
-    products.pop();
-    setProduct([...products]);
+    data.products.pop();
+    setData({ ...data });
   };
 
-  const productData = (ele) => {
-    console.log(ele);
+  const productData = (idx) => {
+    // console.log(ele);
     return (
       <Grid container spacing={2}>
         <Grid item xs={12} lg={4}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="Product Description" />
+            <SoftInput
+              placeholder="Product Description"
+              value={data.products[idx].desc}
+              onChange={(e) => {
+                data.products[idx].desc = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={1}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="QTY" />
+            <SoftInput
+              placeholder="QTY"
+              value={data.products[idx].qty}
+              onChange={(e) => {
+                data.products[idx].qty = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={2}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="Weight" />
+            <SoftInput
+              placeholder="Weight"
+              value={data.products[idx].weight}
+              onChange={(e) => {
+                data.products[idx].weight = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={2}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="Unit Price" />
+            <SoftInput
+              placeholder="Unit Price"
+              value={data.products[idx].price}
+              onChange={(e) => {
+                data.products[idx].price = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
         <Grid item xs={12} lg={3}>
           <SoftBox pt={2}>
-            <SoftInput placeholder="Total Value" />
+            <SoftInput
+              placeholder="Total Value"
+              value={data.products[idx].total}
+              onChange={(e) => {
+                data.products[idx].total = e.target.value;
+                setData({ ...data });
+              }}
+            />
           </SoftBox>
         </Grid>
       </Grid>
@@ -79,49 +152,126 @@ function CommercialInvoice() {
           <Grid container spacing={6}>
             <Grid item xs={12} lg={5}>
               <SoftBox mt={6} pt={2} pb={3}>
-                <SoftInput placeholder="Vendor/Exporter" multiline rows={10} />
+                <SoftInput
+                  placeholder="Vendor/Exporter"
+                  multiline
+                  rows={10}
+                  value={data.vendor}
+                  onChange={(e) => {
+                    data.vendor = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
               <Grid container spacing={2}>
                 <Grid item xs={12} lg={6}>
                   <SoftBox mt={6} pt={2}>
-                    <SoftInput placeholder="Invoice Number" />
+                    <SoftInput
+                      placeholder="Invoice Number"
+                      value={data.invoiceNum}
+                      onChange={(e) => {
+                        data.invoiceNum = e.target.value;
+                        setData({ ...data });
+                      }}
+                    />
                   </SoftBox>
                   <SoftBox pt={2}>
-                    <SoftInput placeholder="Letter of Credit Number" />
+                    <SoftInput
+                      placeholder="Letter of Credit Number"
+                      value={data.letterOfCreditNumber}
+                      onChange={(e) => {
+                        data.letterOfCreditNumber = e.target.value;
+                        setData({ ...data });
+                      }}
+                    />
                   </SoftBox>
                   <SoftBox pt={2}>
-                    <SoftInput placeholder="Currency" />
+                    <SoftInput
+                      placeholder="Currency"
+                      value={data.currency}
+                      onChange={(e) => {
+                        data.currency = e.target.value;
+                        setData({ ...data });
+                      }}
+                    />
                   </SoftBox>
                 </Grid>
                 <Grid item xs={12} lg={6}>
                   <SoftBox mt={6} pt={2}>
-                    <SoftInput placeholder="Date Of Shipment" />
+                    <SoftInput
+                      placeholder="Date Of Shipment"
+                      value={data.dateOfShipment}
+                      onChange={(e) => {
+                        data.dateOfShipment = e.target.value;
+                        setData({ ...data });
+                      }}
+                    />
                   </SoftBox>
                   <SoftBox pt={2}>
-                    <SoftInput placeholder="AWB/BL Number" />
+                    <SoftInput
+                      placeholder="AWB/BL Number"
+                      value={data.awbNum}
+                      onChange={(e) => {
+                        data.awbNum = e.target.value;
+                        setData({ ...data });
+                      }}
+                    />
                   </SoftBox>
                   <SoftBox pt={2}>
-                    <SoftInput placeholder="Country of Origin" />
+                    <SoftInput
+                      placeholder="Country of Origin"
+                      value={data.origin}
+                      onChange={(e) => {
+                        data.origin = e.target.value;
+                        setData({ ...data });
+                      }}
+                    />
                   </SoftBox>
                 </Grid>
               </Grid>
 
               <SoftBox pt={4}>
-                <SoftInput placeholder="Conditions of Sale/Terms of Sale" fullWidth />
+                <SoftInput
+                  placeholder="Conditions of Sale/Terms of Sale"
+                  fullWidth
+                  value={data.condition}
+                  onChange={(e) => {
+                    data.condition = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
           </Grid>
           <Grid container spacing={6}>
             <Grid item xs={12} lg={5}>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Consignee" multiline rows={5} />
+                <SoftInput
+                  placeholder="Consignee"
+                  multiline
+                  rows={5}
+                  value={data.consignee}
+                  onChange={(e) => {
+                    data.consignee = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
             <Grid item xs={12} lg={5}>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Importer" multiline rows={5} />
+                <SoftInput
+                  placeholder="Importer"
+                  multiline
+                  rows={5}
+                  value={data.importer}
+                  onChange={(e) => {
+                    data.importer = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
           </Grid>
@@ -131,10 +281,24 @@ function CommercialInvoice() {
                 Transportation
               </SoftTypography>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Via" />
+                <SoftInput
+                  placeholder="Via"
+                  value={data.via}
+                  onChange={(e) => {
+                    data.via = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
               <SoftBox mb={2}>
-                <SoftInput placeholder="From" />
+                <SoftInput
+                  placeholder="From"
+                  value={data.from}
+                  onChange={(e) => {
+                    data.from = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
             <Grid item xs={8} lg={3.3}>
@@ -142,15 +306,38 @@ function CommercialInvoice() {
                 Total Number Of Packages
               </SoftTypography>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Total Net Weight" />
+                <SoftInput
+                  placeholder="Total Net Weight"
+                  value={data.totNetWeight}
+                  onChange={(e) => {
+                    data.totNetWeight = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Total Gross Weight" />
+                <SoftInput
+                  placeholder="Total Gross Weight"
+                  value={data.totGrossWeight}
+                  onChange={(e) => {
+                    data.totGrossWeight = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
             <Grid item xs={8} lg={3.3}>
               <SoftBox mb={2} mt={4.3}>
-                <SoftInput placeholder="Total Invoice" multiline rows={3.6} />
+                <SoftInput
+                  placeholder="Total Invoice"
+                  multiline
+                  rows={3.6}
+                  value={data.totInvoice}
+                  onChange={(e) => {
+                    data.totInvoice = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
           </Grid>
@@ -184,10 +371,10 @@ function CommercialInvoice() {
                   </SoftTypography>
                 </Grid>
               </Grid>
-              {products.map((ele) => {
+              {data.products.map((ele, idx) => {
                 return (
-                  <Grid item key={ele}>
-                    {productData(ele)}
+                  <Grid item key={idx}>
+                    {productData(idx)}
                   </Grid>
                 );
               })}
@@ -214,17 +401,38 @@ function CommercialInvoice() {
           <Grid container spacing={2} mt={1}>
             <Grid item xs={8} lg={4}>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Name" />
+                <SoftInput
+                  placeholder="Name"
+                  value={data.name}
+                  onChange={(e) => {
+                    data.name = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
             <Grid item xs={8} lg={4}>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Signature" />
+                <SoftInput
+                  placeholder="Signature"
+                  value={data.signature}
+                  onChange={(e) => {
+                    data.signature = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
             <Grid item xs={8} lg={4}>
               <SoftBox mb={2}>
-                <SoftInput placeholder="Date" />
+                <SoftInput
+                  placeholder="Date"
+                  value={data.date}
+                  onChange={(e) => {
+                    data.date = e.target.value;
+                    setData({ ...data });
+                  }}
+                />
               </SoftBox>
             </Grid>
           </Grid>

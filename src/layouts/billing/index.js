@@ -17,7 +17,6 @@ import Footer from "examples/Footer";
 import PaymentMethod from "layouts/billing/components/PaymentMethod";
 import Invoices from "layouts/billing/components/Invoices";
 import BillingInformation from "layouts/billing/components/BillingInformation";
-import Transactions from "layouts/billing/components/Transactions";
 import OrdersOverview from "layouts/dashboard/components/OrderOverview";
 
 function Billing() {
@@ -30,7 +29,7 @@ function Billing() {
             <Grid item xs={12} lg={8}>
               <Grid container spacing={3}>
                 <Grid item xs={12} xl={6}>
-                  <MasterCard number={4562112245947852} holder="jack peterson" expires="11/22" />
+                  <MasterCard number={4562112245947852} holder="Jan 22, 2022" expires="11/22" />
                 </Grid>
                 <Grid item xs={12} md={6} xl={3}>
                   <DefaultInfoCard
@@ -42,10 +41,11 @@ function Billing() {
                 </Grid>
                 <Grid item xs={12} md={6} xl={3}>
                   <DefaultInfoCard
-                    icon="paypal"
-                    title="paypal"
-                    description="Freelance Payment"
-                    value="$455.00"
+                    icon="reportGmail"
+                    title="Risk"
+                    description="Risk Exposer"
+                    value="+22.5"
+                    color="error"
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -64,7 +64,6 @@ function Billing() {
               <BillingInformation />
             </Grid>
             <Grid item xs={12} md={5}>
-              {/* <Transactions /> */}
               <OrdersOverview />
             </Grid>
           </Grid>
