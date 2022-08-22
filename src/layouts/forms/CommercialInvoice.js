@@ -47,6 +47,7 @@ const datas = {
       weight: "",
       price: "",
       total: "",
+      hs: "",
     },
   ],
 };
@@ -62,6 +63,7 @@ function CommercialInvoice() {
       weight: "",
       price: "",
       total: "",
+      hs: "",
     };
     data.products.push(newProd);
     setData({ ...data });
@@ -99,13 +101,25 @@ function CommercialInvoice() {
             />
           </SoftBox>
         </Grid>
-        <Grid item xs={12} lg={2}>
+        <Grid item xs={12} lg={1}>
           <SoftBox pt={2}>
             <SoftInput
               placeholder="Weight"
               value={data.products[idx].weight}
               onChange={(e) => {
                 data.products[idx].weight = e.target.value;
+                setData({ ...data });
+              }}
+            />
+          </SoftBox>
+        </Grid>
+        <Grid item xs={12} lg={1}>
+          <SoftBox pt={2}>
+            <SoftInput
+              placeholder="HS Code"
+              value={data.products[idx].hs}
+              onChange={(e) => {
+                data.products[idx].hs = e.target.value;
                 setData({ ...data });
               }}
             />
@@ -355,9 +369,14 @@ function CommercialInvoice() {
                     QTY
                   </SoftTypography>
                 </Grid>
-                <Grid item xs={4} lg={2}>
+                <Grid item xs={4} lg={1}>
                   <SoftTypography variant="h6" fontWeight="medium" mb={1} ml={1}>
                     Weigth
+                  </SoftTypography>
+                </Grid>
+                <Grid item xs={4} lg={1}>
+                  <SoftTypography variant="h6" fontWeight="medium" mb={1} ml={1}>
+                    HS Code
                   </SoftTypography>
                 </Grid>
                 <Grid item xs={4} lg={2}>

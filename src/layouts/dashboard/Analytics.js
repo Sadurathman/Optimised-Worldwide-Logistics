@@ -22,6 +22,7 @@ import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import gradientLineChartData from "layouts/dashboard/data/gradientLineChartData";
 import map from "assets/images/map.jpg";
 import MonthlyCostData from "./data/MontlyCostData";
+import SearchBox from "./components/SearchBox";
 
 function Analytics() {
   const { size } = typography;
@@ -69,6 +70,9 @@ function Analytics() {
               />
             </Grid>
           </Grid>
+        </SoftBox>
+        <SoftBox mb={3}>
+          <SearchBox />
         </SoftBox>
         <SoftBox mb={3}>
           <Grid container spacing={3}>
