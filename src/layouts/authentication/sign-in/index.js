@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -12,11 +12,26 @@ import SoftButton from "components/SoftButton";
 import CoverLayout from "layouts/authentication/components/CoverLayout";
 
 import curved9 from "assets/images/curved-images/curved-6.jpg";
+import server from "../../../api/server";
+import { LOGIN } from "api/urls";
 
 function SignIn() {
   const [rememberMe, setRememberMe] = useState(true);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    login();
+  }, []);
+
+  const login = async () => {
+    const res = await server.get(LOGIN, {
+      params: {},
+    });
+
+    setUser(res.data);
+  };
 
   return (
     <CoverLayout
