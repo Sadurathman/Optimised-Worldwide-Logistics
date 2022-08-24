@@ -24,8 +24,9 @@ function AuthorityDashboard() {
   const { columns: prCols, rows: prRows } = projectsTableData;
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    // <DashboardLayout>
+    //   <DashboardNavbar />
+    <>
       <SoftBox py={3}>
         <SoftBox mb={3}>
           <Card>
@@ -47,8 +48,9 @@ function AuthorityDashboard() {
           </Card>
         </SoftBox>
       </SoftBox>
-      <Footer />
-    </DashboardLayout>
+      {/* <Footer /> */}
+    </>
+    // </DashboardLayout>
   );
 }
 

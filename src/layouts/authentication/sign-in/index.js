@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
 import Switch from "@mui/material/Switch";
 
 import SoftBox from "components/SoftBox";
@@ -14,16 +14,21 @@ import CoverLayout from "layouts/authentication/components/CoverLayout";
 import curved9 from "assets/images/curved-images/curved-6.jpg";
 import server from "../../../api/server";
 import { LOGIN } from "api/urls";
+import { signIn } from "actions";
+import Loader from "components/Loader";
 
-function SignIn() {
+function SignIn({ userInfo, signIn }) {
   const [rememberMe, setRememberMe] = useState(true);
-
+  const history = useNavigate();
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
   const [user, setUser] = useState();
+  const [credential, setCredential] = useState({ email: "", pass: "" });
 
   useEffect(() => {
-    login();
-  }, []);
+    if (userInfo && userInfo.isSignedIn) {
+      history("/dashboard");
+    }
+  }, [userInfo]);
 
   const login = async () => {
     const res = await server.get(LOGIN, {
@@ -33,7 +38,7 @@ function SignIn() {
     setUser(res.data);
   };
 
-  return (
+  return !userInfo.isSignedIn ? (
     <CoverLayout
       title="Welcome back"
       description="Enter your email and password to sign in"
@@ -46,7 +51,15 @@ function SignIn() {
               Email
             </SoftTypography>
           </SoftBox>
-          <SoftInput type="email" placeholder="Email" />
+          <SoftInput
+            type="email"
+            placeholder="Email"
+            value={credential.email}
+            onChange={(e) => {
+              credential.email = e.target.value;
+              setCredential({ ...credential });
+            }}
+          />
         </SoftBox>
         <SoftBox mb={2}>
           <SoftBox mb={1} ml={0.5}>
@@ -54,7 +67,15 @@ function SignIn() {
               Password
             </SoftTypography>
           </SoftBox>
-          <SoftInput type="password" placeholder="Password" />
+          <SoftInput
+            type="password"
+            placeholder="Password"
+            value={credential.pass}
+            onChange={(e) => {
+              credential.pass = e.target.value;
+              setCredential({ ...credential });
+            }}
+          />
         </SoftBox>
         <SoftBox display="flex" alignItems="center">
           <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -68,7 +89,14 @@ function SignIn() {
           </SoftTypography>
         </SoftBox>
         <SoftBox mt={4} mb={1}>
-          <SoftButton variant="gradient" color="info" fullWidth>
+          <SoftButton
+            variant="gradient"
+            color="info"
+            fullWidth
+            onClick={(e) => {
+              signIn(credential);
+            }}
+          >
             sign in
           </SoftButton>
         </SoftBox>
@@ -89,7 +117,15 @@ function SignIn() {
         </SoftBox>
       </SoftBox>
     </CoverLayout>
+  ) : (
+    <Loader />
   );
 }
 
-export default SignIn;
+const mapStateToProps = (state) => {
+  return {
+    userInfo: state.auth,
+  };
+};
+
+export default connect(mapStateToProps, { signIn })(SignIn);

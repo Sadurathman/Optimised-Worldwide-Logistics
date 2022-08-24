@@ -23,7 +23,7 @@ import leftNavRoutes from "leftNavRoutes";
 
 import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
-import brand from "assets/images/Logo.jpg";
+import brand from "assets/images/logo.png";
 
 export default function App() {
   const [controller, dispatch] = useSoftUIController();

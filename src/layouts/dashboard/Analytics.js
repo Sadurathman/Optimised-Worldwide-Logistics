@@ -74,16 +74,7 @@ function Analytics() {
         <SoftBox mb={3}>
           <SearchBox />
         </SoftBox>
-        <SoftBox mb={3}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} lg={7}>
-              <BuildByDevelopers />
-            </Grid>
-            <Grid item xs={12} lg={5}>
-              <WorkWithTheRockets />
-            </Grid>
-          </Grid>
-        </SoftBox>
+
         <SoftBox mb={3}>
           <Grid container spacing={3}>
             {/* <Grid item xs={12} lg={5}></Grid> */}
@@ -131,6 +122,16 @@ function Analytics() {
               />
             </Grid>
           </Grid>
+          <SoftBox mb={3}>
+            <Grid container spacing={3}>
+              <Grid item xs={12} lg={7}>
+                <BuildByDevelopers />
+              </Grid>
+              <Grid item xs={12} lg={5}>
+                <WorkWithTheRockets />
+              </Grid>
+            </Grid>
+          </SoftBox>
         </SoftBox>
         {/* <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={8}>

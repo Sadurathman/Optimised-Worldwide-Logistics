@@ -24,8 +24,7 @@ function InspectionDashboard() {
   const { columns: prCols, rows: prRows } = projectsTableData;
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <>
       <SoftBox py={3}>
         <SoftBox mb={3}>
           <Card>
@@ -64,8 +63,8 @@ function InspectionDashboard() {
           </SoftBox>
         </Card> */}
       </SoftBox>
-      <Footer />
-    </DashboardLayout>
+      {/* <Footer /> */}
+    </>
   );
 }
 

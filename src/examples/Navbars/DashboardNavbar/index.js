@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { useLocation, Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import PropTypes from "prop-types";
 
@@ -34,8 +35,9 @@ import {
 
 import team2 from "assets/images/team-2.jpg";
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
+// import { signOut } from "actions";
 
-function DashboardNavbar({ absolute, light, isMini }) {
+function DashboardNavbar({ absolute, light, isMini, signOut }) {
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useSoftUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator } = controller;
@@ -103,7 +105,9 @@ function DashboardNavbar({ absolute, light, isMini }) {
         }
         route="/authentication/sign-in"
         title={["", "Logout"]}
-        // onClick={handleCloseMenu}
+        onClick={() => {
+          // signOut();
+        }}
       />
     </Menu>
   );
@@ -202,4 +206,5 @@ DashboardNavbar.propTypes = {
   isMini: PropTypes.bool,
 };
 
+// export default connect(null, signOut)(DashboardNavbar);
 export default DashboardNavbar;

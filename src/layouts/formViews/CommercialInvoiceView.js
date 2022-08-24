@@ -374,12 +374,12 @@ function CommercialInvoiceView() {
           <Grid container spacing={2} mt={1}>
             <Grid item>
               <SoftButton variant="gradient" color="success" onClick={addProductHandler}>
-                <Icon>add</Icon>&nbsp;&nbsp;Add
+                <Icon>add</Icon>&nbsp;&nbsp;Approve
               </SoftButton>
             </Grid>
             <Grid item>
               <SoftButton variant="gradient" color="error" onClick={removeProductHandler}>
-                <Icon>remove</Icon>&nbsp;&nbsp;Remove
+                <Icon>remove</Icon>&nbsp;&nbsp;Deny
               </SoftButton>
             </Grid>
           </Grid>

@@ -719,7 +719,7 @@ function BillOfLadingView() {
                 </Grid>
                 <Grid item>
                   <SoftButton variant="gradient" color="error" onClick={removeCarrierHandler}>
-                    <Icon>remove</Icon>&nbsp;&nbsp;Reject
+                    <Icon>remove</Icon>&nbsp;&nbsp;Deny
                   </SoftButton>
                 </Grid>
               </Grid>

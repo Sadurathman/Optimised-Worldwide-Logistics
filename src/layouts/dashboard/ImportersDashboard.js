@@ -24,8 +24,7 @@ function ImportersDashboard() {
   const { columns: prCols, rows: prRows } = projectsTableData;
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <>
       <SoftBox py={3}>
         <SoftBox mb={3}>
           <Card>
@@ -65,8 +64,8 @@ function ImportersDashboard() {
           </Card>
         </SoftBox>
       </SoftBox>
-      <Footer />
-    </DashboardLayout>
+      {/* <Footer /> */}
+    </>
   );
 }
 
