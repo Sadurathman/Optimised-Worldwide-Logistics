@@ -137,12 +137,15 @@ function BillOfLadingView() {
   const [carrier, setCarrier] = useState([1]);
   const [lad, setLad] = useState({});
 
-  useEffect(async () => {
-    if (!lad.from) {
-      const data = await server.get("/");
-      console.log(data);
-      setLad(data);
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!lad.from) {
+        const data = await server.get("/");
+        console.log(data);
+        setLad(data);
+      }
+    };
+    fetchData();
   }, [lad]);
 
   const addProductHandler = () => {
@@ -297,12 +300,14 @@ function BillOfLadingView() {
   const handleSetToFOB = () => setToFOB(!toFOB);
   const [ladingData, setLadingData] = useState({});
 
-  useEffect(async () => {
-    if (!ladingData.from) {
-      const data = await server.get();
-      console.log(data);
-      setLadingData(data);
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!ladingData.from) {
+        const data = await server.get();
+        console.log(data);
+        setLadingData(data);
+      }
+    };
   }, []);
 
   return (
