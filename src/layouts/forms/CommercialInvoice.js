@@ -456,11 +456,9 @@ function CommercialInvoice() {
             </Grid>
           </Grid>
           <SoftBox mt={4} mb={1}>
-            <Link to="/form/bill-of-landing">
-              <SoftButton variant="gradient" color="dark">
-                Submit
-              </SoftButton>
-            </Link>
+            <SoftButton variant="gradient" color="dark">
+              Proceed
+            </SoftButton>
           </SoftBox>
         </SoftBox>
       </Card>

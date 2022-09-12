@@ -20,6 +20,7 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import curved6 from "assets/images/curved-images/curved14.jpg";
 import { Grid, Icon } from "@mui/material";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import { res } from "layouts/Contracts/gstData";
 
 const datas = {
   fromName: "",
@@ -71,8 +72,24 @@ const datas = {
 };
 
 function BillOfLanding() {
+  let url = window.location.toString();
+  let params = url?.split("?")[1]?.split("=")[1];
+
   const [products, setProduct] = useState([1]);
   const [carrier, setCarrier] = useState([1]);
+  const response = res;
+
+  if (params && params[0] === "1") {
+    datas.fromAddress = response.fromAddr1 + ", " + response.fromAddr2;
+    datas.fromName = response.fromTrdName;
+    datas.fromLocation = response.fromPlace + " - " + response.fromPincode;
+
+    datas.toAddress = response.toAddr1 + ", " + response.toAddr2;
+    datas.toLocation = response.toPlace + " - " + response.toPincode;
+    datas.toName = response.toTrdName;
+
+    response.itemList.forEach((item) => {});
+  }
   const [data, setData] = useState(datas);
 
   const addProductHandler = () => {
@@ -322,7 +339,7 @@ function BillOfLanding() {
       <Card>
         <SoftBox p={3} mb={1} textAlign="center">
           <SoftTypography variant="h4" fontWeight="medium">
-            Bill Of Lading
+            Commercial Invoice
           </SoftTypography>
         </SoftBox>
         <SoftBox pt={2} pb={3} ml={6} px={6}>
@@ -826,9 +843,9 @@ function BillOfLanding() {
           </Grid>
 
           <SoftBox mt={4} mb={1}>
-            <Link to="/">
+            <Link to="/new-order">
               <SoftButton variant="gradient" color="dark">
-                Submit
+                Proceed
               </SoftButton>
             </Link>
           </SoftBox>

@@ -9,23 +9,24 @@ import { useNavigate } from "react-router-dom";
 import ImportersDashboard from "./ImportersDashboard";
 import AuthorityDashboard from "./AuthorityDashboard";
 import InspectionDashboard from "./InspectionDashboard";
+import Contracts from "layouts/Contracts";
 
 function Dashboard({ userInfo, userType }) {
   const history = useNavigate();
   useEffect(() => {
-    console.log(userInfo.userId);
+    // console.log(userInfo.userId);
     if (!userInfo.isSignedIn) {
-      console.log(userInfo.isSignedIn);
+      // console.log(userInfo.isSignedIn);
       history("/authentication/sign-in");
     }
   }, [userInfo]);
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <LogisticsDashboard />
+      {/* <LogisticsDashboard /> */}
       {userType === 4 && <LogisticsDashboard />}
       {userType === 3 && <ImportersDashboard />}
-      {userType === 2 && <AuthorityDashboard />}
+      {userType === 2 && <Contracts />}
       {userType === 1 && <InspectionDashboard />}
       <Footer />
     </DashboardLayout>

@@ -135,10 +135,19 @@ function CommercialInvoiceView() {
     <DashboardLayout>
       <DashboardNavbar />
       <Card>
-        <SoftBox p={3} mb={1} textAlign="center">
-          <SoftTypography variant="h4" fontWeight="medium">
-            Commercial Invoice
-          </SoftTypography>
+        <SoftBox p={3} mb={1} ml={6} pl={6} textAlign="center">
+          <Grid container spacing={6}>
+            <Grid item xs={12} lg={8}>
+              <SoftTypography variant="h4" fontWeight="medium">
+                Commercial Invoice
+              </SoftTypography>
+            </Grid>
+            <Grid item xs={8} lg={4}>
+              <SoftButton>
+                <Icon>print</Icon>&nbsp; Print
+              </SoftButton>
+            </Grid>
+          </Grid>
         </SoftBox>
         <SoftBox pt={2} pb={3} ml={6} px={6}>
           <Grid container spacing={6}>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // react-router-dom components
 import { Link } from "react-router-dom";
@@ -20,6 +20,7 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import curved6 from "assets/images/curved-images/curved14.jpg";
 import { Grid, Icon } from "@mui/material";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import server from "api/server";
 
 const data = {
   fromName: "Sri Hari",
@@ -134,6 +135,15 @@ const data = {
 function BillOfLadingView() {
   const [products, setProduct] = useState([1]);
   const [carrier, setCarrier] = useState([1]);
+  const [lad, setLad] = useState({});
+
+  useEffect(async () => {
+    if (!lad.from) {
+      const data = await server.get("/");
+      console.log(data);
+      setLad(data);
+    }
+  }, [lad]);
 
   const addProductHandler = () => {
     products.push(products[products.length]);
@@ -155,7 +165,7 @@ function BillOfLadingView() {
   };
 
   const productData = (ele) => {
-    console.log(ele);
+    // console.log(ele);
     return (
       <Grid container spacing={2} ml={2}>
         <Grid item xs={12} lg={4}>
@@ -285,14 +295,33 @@ function BillOfLadingView() {
 
   const [toFOB, setToFOB] = useState(false);
   const handleSetToFOB = () => setToFOB(!toFOB);
+  const [ladingData, setLadingData] = useState({});
+
+  useEffect(async () => {
+    if (!ladingData.from) {
+      const data = await server.get();
+      console.log(data);
+      setLadingData(data);
+    }
+  }, []);
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <Card>
         <SoftBox p={3} mb={1} textAlign="center">
-          <SoftTypography variant="h4" fontWeight="medium">
-            Bill Of Lading
-          </SoftTypography>
+          <Grid container spacing={6}>
+            <Grid item xs={12} lg={8}>
+              <SoftTypography variant="h4" fontWeight="medium">
+                Bill Of Lading
+              </SoftTypography>
+            </Grid>
+            <Grid item xs={8} lg={4}>
+              <SoftButton>
+                <Icon>print</Icon>&nbsp; Print
+              </SoftButton>
+            </Grid>
+          </Grid>
         </SoftBox>
         <SoftBox pt={1} pb={3} ml={6} px={6}>
           <Grid container spacing={6}>

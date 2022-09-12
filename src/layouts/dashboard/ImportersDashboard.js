@@ -25,6 +25,8 @@ function ImportersDashboard() {
 
   return (
     <>
+      {/* <DashboardLayout>
+        <DashboardNavbar /> */}
       <SoftBox py={3}>
         <SoftBox mb={3}>
           <Card>
@@ -65,6 +67,7 @@ function ImportersDashboard() {
         </SoftBox>
       </SoftBox>
       {/* <Footer /> */}
+      {/* </DashboardLayout> */}
     </>
   );
 }

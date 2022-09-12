@@ -22,6 +22,8 @@ import ImportersDashboard from "layouts/dashboard/ImportersDashboard";
 import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import { Icon } from "@mui/material";
 import BillOfLadingView from "layouts/formViews/BillOfLadingView";
+import Market from "layouts/marketPlace/Market";
+import DropBox from "layouts/Contracts/DropBox";
 
 const routes = [
   {
@@ -51,44 +53,61 @@ const routes = [
     component: <Tables />,
     noCollapse: true,
   },
-
-  { type: "title", title: "Users Dashboards", key: "account-pages" },
   {
     type: "collapse",
-    name: "Exporter",
-    key: "exporter",
-    route: "/contracts",
-    icon: <Cube size="12px" />,
-    component: <Projects />,
+    name: "Market",
+    key: "market-place",
+    route: "/market-place",
+    icon: <Office size="12px" />,
+    component: <Market />,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Authority",
-    key: "auth",
-    route: "/auth-dash",
-    icon: <Settings size="12px" />,
-    component: <AuthorityDashboard />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "Inspection",
-    key: "inspect",
-    route: "/inspect",
+    name: "dropbox",
+    key: "dropbox",
+    route: "/dropbox",
     icon: <CustomerSupport size="12px" />,
-    component: <InspectionDashboard />,
+    component: <DropBox />,
     noCollapse: true,
   },
-  {
-    type: "collapse",
-    name: "Importer",
-    key: "importer",
-    route: "/Importer",
-    icon: <Document size="12px" />,
-    component: <ImportersDashboard />,
-    noCollapse: true,
-  },
+  // { type: "title", title: "Users Dashboards", key: "account-pages" },
+  // {
+  //   type: "collapse",
+  //   name: "Exporter",
+  //   key: "exporter",
+  //   route: "/contracts",
+  //   icon: <Cube size="12px" />,
+  //   component: <Projects />,
+  //   noCollapse: true,
+  // },
+  // {
+  //   type: "collapse",
+  //   name: "Authority",
+  //   key: "auth",
+  //   route: "/auth-dash",
+  //   icon: <Settings size="12px" />,
+  //   component: <AuthorityDashboard />,
+  //   noCollapse: true,
+  // },
+  // {
+  //   type: "collapse",
+  //   name: "Inspection",
+  //   key: "inspect",
+  //   route: "/inspect",
+  //   icon: <CustomerSupport size="12px" />,
+  //   component: <InspectionDashboard />,
+  //   noCollapse: true,
+  // },
+  // {
+  //   type: "collapse",
+  //   name: "Importer",
+  //   key: "importer",
+  //   route: "/Importer",
+  //   icon: <Document size="12px" />,
+  //   component: <ImportersDashboard />,
+  //   noCollapse: true,
+  // },
 ];
 
 export default routes;

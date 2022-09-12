@@ -34,7 +34,7 @@ function Billing() {
                 <Grid item xs={12} md={6} xl={3}>
                   <DefaultInfoCard
                     icon="account_balance"
-                    title="Total Value Of Goods"
+                    title="Value Of Goods"
                     description="Belong Interactive"
                     value="+$2000"
                   />

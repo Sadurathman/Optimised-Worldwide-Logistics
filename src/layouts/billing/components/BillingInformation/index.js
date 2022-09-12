@@ -31,7 +31,7 @@ function BillingInformation() {
             vat="FRB1235476"
           />
           <Bill
-            name="Commercial Invoice"
+            name="Country Of Origin Certificate"
             company="fiber notion"
             email="ethan@fiber.com"
             vat="FRB1235476"

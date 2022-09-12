@@ -16,6 +16,8 @@ import SoftTypography from "components/SoftTypography";
 import { Card } from "@mui/material";
 import authorsTableData from "layouts/tables/data/authorsTableData";
 import projectsTableData from "layouts/tables/data/projectsTableData";
+import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
+import SearchBox from "layouts/dashboard/components/SearchBox";
 
 function Contracts() {
   const { size } = typography;
@@ -23,15 +25,37 @@ function Contracts() {
   const { columns, rows } = authorsTableData;
   const { columns: prCols, rows: prRows } = projectsTableData;
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <>
+      {/* <DashboardNavbar /> */}
       <SoftBox py={3}>
         <SoftBox mb={3}>
-          <Link to="/form/commercial-invoice">
-            <SoftButton variant="gradient" color="info" size="large" fullWidth>
-              <Icon>add</Icon>&nbsp; Make Order
-            </SoftButton>
-          </Link>
+          <SearchBox />
+          <Grid container spacing={3} mt={3}>
+            <Grid item lg={3}>
+              <Link to="/new-order">
+                <DefaultInfoCard
+                  title="Create Order"
+                  icon="list"
+                  description="Initiate the order"
+                  value="+1"
+                  color="info"
+                />
+                {/* <Icon>add</Icon>&nbsp; Make Order */}
+              </Link>
+            </Grid>
+            <Grid item lg={3}>
+              <Link to="/eway-bill">
+                <DefaultInfoCard
+                  title="Order Using EWB No"
+                  icon="extension"
+                  description="Using GST - EWay Bill Number"
+                  value="+1"
+                  color="info"
+                />
+                {/* <Icon>add</Icon>&nbsp; Make Order */}
+              </Link>
+            </Grid>
+          </Grid>
           <Grid container spacing={3}>
             {/* <Grid item xs={12} sm={6} xl={3} lg={12}></Grid> */}
             {/* <Grid item xs={12} sm={6} xl={3}>
@@ -102,7 +126,7 @@ function Contracts() {
           </Card>
         </SoftBox>
       </SoftBox>
-    </DashboardLayout>
+    </>
   );
 }
 

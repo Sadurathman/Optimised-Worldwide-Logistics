@@ -12,8 +12,12 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
   : null;
+
 const initialState = {
-  auth: { userId: userInfoFromStorage },
+  auth: {
+    userId: userInfoFromStorage,
+    // isSignedIn: userInfoFromStorage !== undefined
+  },
 };
 const store = createStore(reducers, initialState, composeEnhancers(applyMiddleware(reduxThunk)));
 

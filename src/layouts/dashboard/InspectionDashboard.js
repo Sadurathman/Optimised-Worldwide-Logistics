@@ -25,6 +25,8 @@ function InspectionDashboard() {
 
   return (
     <>
+      {/* <DashboardLayout>
+        <DashboardNavbar /> */}
       <SoftBox py={3}>
         <SoftBox mb={3}>
           <Card>
@@ -64,6 +66,7 @@ function InspectionDashboard() {
         </Card> */}
       </SoftBox>
       {/* <Footer /> */}
+      {/* </DashboardLayout> */}
     </>
   );
 }

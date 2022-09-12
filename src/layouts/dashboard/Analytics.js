@@ -89,7 +89,7 @@ function Analytics() {
                     <SoftTypography variant="button" color="text" fontWeight="medium">
                       4% more{" "}
                       <SoftTypography variant="button" color="text" fontWeight="regular">
-                        in 2022
+                        Required
                       </SoftTypography>
                     </SoftTypography>
                   </SoftBox>
@@ -99,7 +99,7 @@ function Analytics() {
               />
             </Grid>
           </Grid>
-          <Grid container spacing={3} mt={3}>
+          <Grid container spacing={3} mt={3} mb={3}>
             {/* <Grid item xs={12} lg={5}></Grid> */}
             <Grid item xs={12} lg={12}>
               <GradientLineChart

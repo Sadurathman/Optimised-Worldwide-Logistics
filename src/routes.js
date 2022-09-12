@@ -26,6 +26,12 @@ import ImportersDashboard from "layouts/dashboard/ImportersDashboard";
 import Analytics from "layouts/dashboard/Analytics";
 import BillOfLadingView from "layouts/formViews/BillOfLadingView";
 import CommercialInvoiceView from "layouts/formViews/CommercialInvoiceView";
+import Forms from "layouts/forms";
+import EWayBillCredentials from "layouts/Contracts/EWayBillCredentials";
+import Market from "layouts/marketPlace/Market";
+import Intermediate from "layouts/marketPlace/Intermediate";
+import DropBox from "layouts/Contracts/DropBox";
+import View from "layouts/Contracts/View";
 
 const routes = [
   {
@@ -143,7 +149,7 @@ const routes = [
     key: "commercial-invoice",
     route: "/form/commercial-invoice",
     icon: <SpaceShip size="12px" />,
-    component: <CommercialInvoice />,
+    component: <BillOfLanding />,
     noCollapse: true,
   },
   {
@@ -189,6 +195,60 @@ const routes = [
     route: "/Importer",
     icon: <Document size="12px" />,
     component: <ImportersDashboard />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "New Order",
+    key: "new-order",
+    route: "/new-order",
+    icon: <Document size="12px" />,
+    component: <Forms />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "E Way Bill",
+    key: "eway-bill",
+    route: "/eway-bill",
+    icon: <Document size="12px" />,
+    component: <EWayBillCredentials />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Market",
+    key: "market-place",
+    route: "/market-place",
+    icon: <Office size="12px" />,
+    component: <Market />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Order Mode",
+    key: "order-mode",
+    route: "/order-mode",
+    icon: <Office size="12px" />,
+    component: <Intermediate />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "dropbox",
+    key: "dropbox",
+    route: "/dropbox",
+    icon: <Office size="12px" />,
+    component: <DropBox />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "dropbox",
+    key: "dropbox",
+    route: "/dropbox/view",
+    icon: <Office size="12px" />,
+    component: <View />,
     noCollapse: true,
   },
 ];
